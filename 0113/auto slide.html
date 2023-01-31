@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>워크넷 오토슬라이드</title>
+  <style>
+    *{margin: 0px; padding:0px;}
+    a{color: #333; text-decoration: none;}
+    ul,li,ol{list-style: none;}
+
+    .b_wrap{
+      width: 340px; height: 378px;
+      margin: 0px auto;
+      border: 3px solid #333;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner{
+      display: flex;
+      position: relative;
+    }
+    .c_btn{
+      display: flex;
+      justify-content: center;
+      transform: translateY(-33px);
+    }
+    .c_btn li{
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      margin: 0px 5px;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .on{
+      background: rgb(255, 94, 94) !important;
+      width: 50px !important;
+      border-radius: 10px !important;
+    }
+    i{
+      color: #fff;
+      font-size: 20px;
+      position: absolute; bottom:12px;
+      cursor: pointer;
+    }
+    .fa-circle-play{
+      right: 40px;
+    }
+    .fa-circle-pause{
+      right: 15px;
+    }
+  </style>
+
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 UI 라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+    $(function(){
+
+      // 이미지의 너비 값을 저장하기 위해 변수 선언
+      let img_w = $('.banner img').width();
+
+      // 인덱스 값을 저장하기 위해 변수 선언
+      let n = $('c_btn li').index();
+
+
+
+      /* 사용자가 버튼을 클릭하면 적용되어야 할 액션
+      1. n이라는 변수에 인덱스값 저장
+      2. 배너 왼쪽으로 움직이게 하기
+      3. 선택한 컨트롤 버튼 서식 변경
+      */
+    
+      // 1. 사용자가 버튼을 클릭하면 n이라는 변수에 인덱스 값을 저장한다.
+      $('.c_btn li').click(function(){
+        n = $(this).index();
+
+        // 2. 사용자가 버튼을 클릭하면 ul이 이미지 너비x(인덱스값) 만큼 left에 마이너스값 주기
+        $('.banner').animate({'left': -img_w * n}, 500, 'easeOutCubic');
+
+        // 3. 사용자가 버튼을 클릭하면 전체 컨트롤버튼 서식을 지우고 선택한 버튼에다가만 on 서식을 적용
+        $('.c_btn li').removeClass('on');
+        $(this).addClass('on');
+      })
+
+
+      // 오토 슬라이드 만들기
+      function autoSlide(n){
+        n = -(n*$('.banner img').width());
+        $('.banner').animate({'left':n}, 500, 'easeOutCubic');
+      };
+
+      let Timer = setInterval(function(){
+        if(n==2){
+          n=0;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }else{
+          n++;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }        
+        autoSlide(n); 
+      }, 2000, 'easeOutCubic');
+
+
+      // 마우스를 올렸을 때 오토슬라이드 중지하기
+      $('.c_btn').hover(function(){
+        clearInterval(Timer);
+      }, function(){
+        Timer = setInterval(function(){
+        if(n==2){
+          n=0;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }else{
+          n++;
+          $('.c_btn li').removeClass('on'); 
+          $('.c_btn li').eq(n).addClass('on')
+        }        
+        autoSlide(n); 
+      }, 2000,'easeOutCubic');
+      });
+
+
+      // 재생, 일시정지 버튼
+      let play = $('.fa-circle-play');
+      let stop = $('.fa-circle-pause');
+
+      $(stop).click(function(){
+        clearInterval(Timer);
+      });
+
+      $(play).click(function(){
+        setInterval(Timer);
+      })
+
+
+    });
+  </script>
+
+</head>
+<body>
+  <article class="b_wrap">
+    <ul class="banner">
+      <li><a href="#" title=""><img src="./images/01-1.jpg" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/02-1.jpg" alt=""></a></li>
+      <li><a href="#" title=""><img src="./images/03-1.jpg" alt=""></a></li>
+    </ul>
+    <ul class="c_btn">
+      <li class="on">&nbsp;</li>
+      <li>&nbsp;</li>
+      <li>&nbsp;</li>
+    </ul>
+    <i class="fa-solid fa-circle-play"></i>
+    <i class="fa-solid fa-circle-pause"></i>
+  </article>
+</body>
+</html>

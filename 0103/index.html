@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>적응형 웹_pc화면</title>
+  <script>
+    // 배열 객체를 사용하여 모바일 스마트폰의 종류별 명칭을 넣어준다.
+    let moblie_keys = new Array('Android','iPhone','iPad','SAMSUNG','BlackBerry','WindowsPhone','WindowsCE','MOT','SonyEricsson','Nokia');
+    if(document.URL.match('move_pc_screen'))moblie_keys=null; // 값이 없다.
+    for(i in moblie_keys){ // in 키워드: 키 값이 있으면 true, 없으면 false
+      if(navigator.userAgent.match(moblie_keys[i]) !=null){
+         location.href='http://nyu.dothome.co.kr/javascript/0103/mindex.html'; // 모바일 홈 연결 주소
+      break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>적응형 웹_pc화면</h2>
+  <p>이 페이지를 pc에서 보면 index.html페이지가 보여지며, mobile 사용자가 접속하면 자동으로 mindex.html 페이지로 연결됩니다.</p>
+</body>
+</html>

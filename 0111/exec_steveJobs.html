@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제 animate 스티브잡스</title>
+  <style>
+    .wrap{
+      width: 800px;
+      border: 3px solid #111;
+      position: relative;
+      overflow: hidden;
+    }
+    .wrap::after{
+      content: '';
+      display: block;
+      padding-top: 500px;
+    }
+    .jobs{
+      width: 600px;
+      display: block;
+      position: absolute;
+      bottom: -800px; right:0px;
+      opacity: 0;
+    }
+    .name{
+      width: 250px;
+      display: block;
+      position: absolute;
+      top: 200px; left:-250px;
+      opacity: 0;
+    }
+  </style>
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 UI 라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script>
+    $(function(){
+      $('.name').animate({'left':'20px','opacity':'1'}, 1200, 'easeOutCubic');
+      $('.jobs').delay(200).animate({'bottom':'0px','opacity':'1'}, 1500, 'easeOutCubic');
+
+    });
+  </script>
+
+</head>
+<body>
+  <div class="wrap">
+    <img src="./images/jobs_text.gif" alt="스티브잡스 이름" class="name">
+    <img src="./images/jobs.png" alt="스티브잡스 인물" class="jobs">
+  </div>
+</body>
+</html>

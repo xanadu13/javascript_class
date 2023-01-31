@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="시드물 브랜드페이지">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>피부의 고향 - 시드물</title>
+  <!-- 웹폰트 -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="../css/base.css">
+
+  <!-- 리셋CSS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <!-- 메뉴, 푸터 서식 -->
+  <link rel="stylesheet" href="../css/common_sub.css">
+  <!-- icon font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- jQuery 삽입 -->
+  <script src="./script/jQuery3_6_3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- subpage header Jquery -->
+  <script src="./script/header_sub.js" defer></script>
+  <!-- 슬라이드 서식 -->
+  <script src="./script/script01.js" defer></script>
+  <script src="./script/script02.js" defer></script>
+  <link rel="stylesheet" href="./css/swiper.css">
+
+  <!-- 여기에 각 페이지별 css 삽입 -->
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+  <!-- modal 영역 시작 -->
+  <div class="modal" id="m_box">
+    <div class="b_modal">
+      <a href="#none" title="정품인증 안내">
+        <img src="./img/Activation.jpg" alt="정품인증배너">
+      </a>
+      <p><input type="button" value="닫기" id="b-modal-close"></p>
+    </div>
+  </div>
+
+  <!-- header 영역 시작 -->
+  <input type="checkbox" id="toggle" name="toggle">
+  <header id="header">
+    <div class="h-top">
+      <h1>
+        <a href="./index.html" title="메인화면으로 돌아가기">
+          <img src="./img/sidmool.svg" alt="시드물">
+        </a>
+      </h1>
+      <ul>
+        <li>
+          <a href="./login/login.html">LOGIN</a>
+        </li>
+        <li>
+          <a href="./join/join.html">JOIN</a>
+        </li>
+        <li>
+          <a href="#none">CS CENTER</a>
+        </li>
+      </ul>
+    </div>
+
+    <label for="toggle" class="total_btn">
+        <span class="h-mnu-btn">
+          <span class="h-btn01">&nbsp;</span>
+          <span class="h-btn02">&nbsp;</span>
+          <span class="h-btn03">&nbsp;</span>
+        </span>
+    </label>
+
+    <div class="h-bottom">
+      <nav>
+        <ul>
+          <li id="top01">
+            <a href="#none">COMPANY</a>
+            <ul class="lnb" id="menu01">
+              <li><a href="#none">기업소개</a></li>
+              <li><a href="#none">연혁/비전</a></li>
+              <li><a href="#none">CEO인사말</a></li>
+            </ul>
+          </li>
+          <li id="top02">
+            <a href="./story/story.html">STORY</a>
+            <ul class="lnb" id="menu02">
+              <li><a href="#none">브랜드이야기</a></li>
+              <li><a href="#none">윤리경영</a></li>
+              <li><a href="#none">동물복지</a></li>
+            </ul>
+          </li>
+          <li id="top03">
+            <a href="./product/product.html">PRODUCT</a>
+            <ul class="lnb" id="menu03">
+              <li><a href="#none">닥터트럽</a></li>
+              <li><a href="#none">뷰리즈</a></li>
+              <li><a href="#none">아크바이</a></li>
+              <li><a href="#none">사카로</a></li>
+            </ul>
+          </li>
+          <li id="top04">
+            <a href="#none">NEWS</a>
+            <ul class="lnb" id="menu04">
+              <li><a href="#none">공지사항</a></li>
+              <li><a href="#none">보도자료</a></li>
+              <li><a href="#none">이벤트</a></li>
+            </ul>
+          </li>
+          <li id="top05">
+            <a href="#none">CONTACT</a>
+            <ul class="lnb" id="menu05">
+            <li><a href="#none">찾아오시는길</a></li>
+            <li><a href="#none">문의하기</a></li>
+          </ul>
+        </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="h-bottom-wrap">&nbsp;</div>
+  </header>
+  <!-- main 영역 시작 -->
+  <section class="bg">
+  <h2>sidmool 프로덕트</h2>
+  <article class="sec01">
+    <div style="height: 400px;">
+      <p> SIDMOOL <span>></span><span> PRODUCT</span></p>
+    </div>
+    <article id="product_item">
+      <h2>The Origin of Skin</h2>
+      <h3>시드물의 베스트 셀러를 소개합니다</h3>
+      <div class="swiper slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/Mask_group.png" alt="img-slide-1" class="img-slide">
+            <p>웰빙 녹차 판테놀 스킨 150ml</p>
+            <p>시드물의 초심과 촉촉함을 담은</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/Mask_group-3.png" alt="img-slide-3" class="img-slide">
+            <p>카렌듈라 앰플 수분크림 80ml</p>
+            <p>촉촉 수분 진정관리와 편안한 장벽관리</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/Mask_group-2.png" alt="img-slide-2" class="img-slide">
+            <p>시드물 녹차 필링젤 120ml</p>
+            <p>제주 녹차로 건강한 피부로 관리</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/Mask_group-4.png" alt="img-slide-4" class="img-slide">
+            <p>브라이트닝 클렌징 오일 250ml</p>
+            <p>시드물 피부 사랑을 담은</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/Mask_group-5.png" alt="img-slide-5" class="img-slide">
+            <p>어성초 수분크림 80ml</p>
+            <p>어머니의 사랑과 어성초를 가득 담은</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/Mask_group-6.png" alt="img-slide-6" class="img-slide">
+            <p>시드물 내츄럴 썬크림</p>
+            <p>자연스러운 톤보정 4계절 마일드 썬크림</p>
+          </div>
+        </div>
+      </div>
+      <i class="fa fa-angle-right next-slide btn01" ></i>
+      <i class="fa fa-angle-left prev-slide btn01" ></i>
+    </article>
+  </article>
+  </section>
+  <section class="sec02">
+      <h2>제품라인업</h2>
+      <article class="tab_con">
+        <div class="tab_menu">
+          <input type="radio" id="tabmenu01" name="sidmool" checked>
+          <label for="tabmenu01">녹차</label>
+      
+          <input type="radio" id="tabmenu02" name="sidmool">
+          <label for="tabmenu02">닥터트럽</label>
+
+          <input type="radio" id="tabmenu03" name="sidmool">
+          <label for="tabmenu03">사카로</label>
+      
+          <input type="radio" id="tabmenu04" name="sidmool">
+          <label for="tabmenu04">아크바이</label>
+        </div>
+        <ul class="c01 tab-active">
+          <li>
+            <img src="./img/image_94.png" alt="이미지">
+            <p class="first">제주 녹차의 싱그러움을 담은</p>
+            <h3>시드물 녹차 라인</h3>
+            <p>시드물은 창업자의 고향의 순우리말로<br>
+              ‘시리도록 차가운 물'이란 뜻입니다.<br>
+              저희 시드물은 여러분의 피부를 고향처럼<br>
+              포근하게 감싸기
+              위한 화장품을 만들도록<br> 노력하고 있습니다.</p>
+          </li>
+          <li>
+            <div class="grid">
+              <div class="grid">
+                <div class="gallery">
+                    <div class="item">
+                      <img src="./img/greentea1.jpg" alt="녹차크림">
+                      <p>녹차스킨 150ml</p>
+                      <p>초심을 그대로 담아낸 피부건강</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea2.jpg" alt="녹차크림">
+                      <p>시드물 효소 파우더 클렌져 60g</p>
+                      <p>마일드 각질 문제성 피부 클렌져</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea03.jpg" alt="녹차크림">
+                      <p>그린티 카밍 릴랙스 패드 70매</p>
+                      <p>풍부한 수분감으로 피부진정효과</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea4.jpg" alt="녹차크림">
+                      <p>그린티 부스팅 워터 60ml</p>
+                      <p>제주산 녹차로 스킨 케어</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea5.jpg" alt="녹차크림">
+                      <p>시드물 녹차 필링젤 120ml</p>
+                      <p>제주녹차를 담은 순한 필링젤</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea5.jpg" alt="녹차크림">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>자연으로 키운 제주 녹차 적용</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea6.jpg" alt="녹차크림">
+                      <p>녹차 화이트닝 아이크림 35g</p>
+                      <p>칙칙함 / 색소침착 / 주름개선</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/greentea7.jpg" alt="녹차크림">
+                      <p>웰빙 녹차 판테놀 로션 150ml</p>
+                      <p>제주산 녹차씨오일 녹차수 함유</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid02">
+              <div class="gallery02">
+                  <div class="item02">
+                    <img src="./img/greentea8.jpg" alt="녹차크림">
+                    <p>티트리 비오틴 샴푸 400g</p>
+                    <p>힘빠진 모발과 두피 건강관리</p>
+                  </div>
+                  <div class="item02">
+                    <img src="./img/greentea9.jpg" alt="녹차크림">
+                    <p>티트리 수제비누 100g</p>
+                    <p>문제성 피부를 위한 청정 클렌징</p>
+                  </div>
+              </div>
+            </div>
+            <input type="button" value="제품 더보기" class="open">
+          </li>
+        </ul>
+    
+        <ul class="c02">
+          <li>
+            <img src="./img/image_98.png" alt="이미지">
+            <p class="first">닥터 트럽에 대한 내용</p>
+            <h3>시드물 닥터트럽 라인</h3>
+            <p>시드물은 창업자의 고향의 순우리말로<br>
+              ‘시리도록 차가운 물'이란 뜻입니다.<br>
+              저희 시드물은 여러분의 피부를 고향처럼<br>
+              포근하게 감싸기
+              위한 화장품을 만들도록<br> 노력하고 있습니다.</p>
+            </li>
+            <li>
+              <div class="grid">
+                <div class="gallery">
+                    <div class="item">
+                      <img src="./img/white1.jpg" alt="닥터트럽">
+                      <p>닥터트럽 마일드 토너 150ml</p>
+                      <p>티트리잎수와 고로쇠나무수액 함유</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white2.jpg" alt="닥터트럽">
+                      <p>닥터트럽 징크크림 60g</p>
+                      <p>퓨어 징크옥 사이드의 효과적 스킨케어</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white3.jpg" alt="닥터트럽">
+                      <p>닥터트럽 바하 마스크 시트 20g</p>
+                      <p>유수분 밸런스 컨트롤</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white4.jpg" alt="닥터트럽">
+                      <p>닥터트럽 포어 리파이닝 세럼 60ml</p>
+                      <p>모공수축과 탄력효과</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white5.jpg" alt="닥터트럽">
+                      <p>닥터트럽 립앤아이 리무버 100ml</p>
+                      <p>잔여물 없이 말끔한 사용감</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white6.jpg" alt="닥터트럽">
+                      <p>닥터트럽 트러블 클렌져 300ml</p>
+                      <p>보이지 않는 원인까지 말끔하게</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white8.jpg" alt="닥터트럽">
+                      <p>닥터트럽 나이아텐 세럼 30ml</p>
+                      <p>모공관리와 생기 부스팅 세럼</p>
+                    </div>
+                    <div class="item">
+                      <img src="./img/white9.jpg" alt="닥터트럽">
+                      <p>닥터트럽 피지제로 센텔라 팩트 8g</p>
+                      <p>유분 컨트롤 진정 팩트</p>
+                    </div>
+                </div>
+              </div>
+              <div class="grid02">
+                <div class="gallery02">
+                    <div class="item02">
+                      <img src="./img/white7.jpg" alt="닥터트럽">
+                      <p>닥터트럽 포어 오프너 크림 60ml</p>
+                      <p>탄탄한 모공과 매끈하고 건강한 피부</p>
+                    </div>
+                    <div class="item02">
+                      <img src="./img/white8.jpg" alt="닥터트럽">
+                      <p>닥터트럽 나이아텐 세럼 30ml</p>
+                      <p>눈부신 피부를 위한 부스팅세럼</p>
+                    </div>
+                    <div class="item02">
+                      <img src="./img/white3.jpg" alt="닥터트럽">
+                      <p>닥터트럽 하이드로겔 아이패치</p>
+                      <p>여린 눈가를 위한 순수함</p>
+                    </div>
+                </div>
+              </div>
+              <input type="button" value="제품 더보기" class="open">
+            </li>
+        </ul>
+
+        <ul class="c03">
+          <li>
+            <img src="./img/image_94.png" alt="이미지">
+            <p class="first">제주 녹차의 싱그러움을 담은</p>
+            <h3>시드물 녹차 라인</h3>
+            <p>시드물은 창업자의 고향의 순우리말로<br>
+              ‘시리도록 차가운 물'이란 뜻입니다.<br>
+              저희 시드물은 여러분의 피부를 고향처럼<br>
+              포근하게 감싸기
+              위한 화장품을 만들도록<br> 노력하고 있습니다.</p>
+          </li>
+          <li>
+            <div class="grid">
+              <div class="gallery">
+                  <div class="item">
+                    <img src="./img/greentea1.jpg" alt="">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+              </div>
+            </div>
+            <div class="grid02">
+              <div class="gallery02">
+                  <div class="item02">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item02">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item02">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+                  <div class="item02">
+                    <p>시드물 녹차 리페어 크림 50g</p>
+                    <p>제주 녹차로 건강한 피부로 관리</p>
+                  </div>
+              </div>
+            </div>
+            <input type="button" value="제품 더보기" class="open">
+          </li>
+        </ul>
+    
+        <ul class="c04">
+          <li>
+            <img src="./img/image_98.png" alt="이미지">
+            <p class="first">닥터 트럽에 대한 내용</p>
+            <h3>시드물 닥터트럽 라인</h3>
+            <p>시드물은 창업자의 고향의 순우리말로<br>
+              ‘시리도록 차가운 물'이란 뜻입니다.<br>
+              저희 시드물은 여러분의 피부를 고향처럼<br>
+              포근하게 감싸기
+              위한 화장품을 만들도록<br> 노력하고 있습니다.</p>
+            </li>
+            <li>
+              <div class="grid">
+                <div class="gallery">
+                    <div class="item">
+                      <img src="./img/greentea1.jpg" alt="녹차크림">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                </div>
+              </div>
+              <div class="grid02">
+                <div class="gallery02">
+                    <div class="item02">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item02">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item02">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                    <div class="item02">
+                      <p>시드물 녹차 리페어 크림 50g</p>
+                      <p>제주 녹차로 건강한 피부로 관리</p>
+                    </div>
+                </div>
+              </div>
+              <input type="button" value="제품 더보기" class="open">
+            </li>
+        </ul>
+      </article>
+  </section>
+  
+  
+  <!-- footer 영역 시작 -->
+  <footer>
+    <div class="f-top">
+      <ul class="f-info">
+        <li><a href="#none">공지사항</a></li>
+        <li><a href="#none">이용약관</a></li>
+        <li><a href="#none">이용안내</a></li>
+        <li><a href="#none">고객센터</a></li>
+        <li><a href="#none">사업자정보확인</a></li>
+      </ul>
+    </div>
+    <div class="f-bottom">
+      <p>
+        <span class="f-txt-info">대표</span>민병권
+      </p>
+      <p>
+        <span class="f-txt-info">상호</span>주식회사 시드물
+      </p>
+      <p>
+        <span class="f-txt-info">사업자등록번호</span>000-0-0-0000
+      </p>
+      <p>
+        <span class="f-txt-info">주소</span>000000 대전광역시 중구 000(000)
+      </p>
+      <p>
+        <span class="f-txt-info">통신판매업신고번호</span>제2008-대전중구•0000호 
+      </p>
+      <p>
+        <span class="f-txt-info">건강기능식품판매업</span>대전중구-제000
+      </p>
+      <p>
+        <span class="f-txt-info">화장품제조판매업등로길증</span>제0000호
+      </p>
+      <p class="f-tel-num">
+        고객센터 080-000-0000
+      </p>
+      <address class="adress">
+        COPYRIGHT &copy; 2023 <span class="f-company">SIDMOOL</span> ALL RIGHT RESERVED.
+      </address>
+      <div class="f-top-btn">
+        <div class="f-qr-btn">
+          <a href="#none"><img src="./img/QRcode2.png" alt="정품인증">
+          정품인증
+          </a>
+        </div>
+        <div class="f-btn">
+          <a href="#" title="최상단으로 돌아가기">TOP</a>
+        </div>
+      </div>
+    </div>
+    
+
+  </footer>
+</body>
+</html>

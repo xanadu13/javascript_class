@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_내장객체(object)_Math p.571</title>
+</head>
+<body>
+  <h2>04_내장객체(object)_Math p.571</h2>
+  <p>수학객체는 수학 계산과 관련된 메서드가 많이 포함되어 있지만 수학에서만 사용하는 것은 아닙니다.</p>
+  <p>다른 객체와의 특징은 new 키워드를 사용하지 않는 정적인 객체라는 점에서 다릅니다.</p>
+
+  <h3>수학객체 속성(프로퍼티)의 종류</h3>
+  <ul>
+    <li>e : 상수</li>
+    <li>PI : 원주율</li>
+    <li>SQRT2</li>
+    <li>SQRT1_2</li>
+    <li>LN2</li>
+    <li>LN10</li>
+    <li>LOG2E</li>
+    <li>LOG10E</li>
+  </ul>
+
+  <h3>수학객체 메서드의 종류</h3>
+  <ul>
+    <li>max(숫자1, 숫자2, 숫자3.....) : 숫자들 중에서 최대값을 반환</li>
+    <li>min(숫자1, 숫자2,  숫자3.....) : 숫자들 중에서 최소값을 반환</li>
+    <li>round(숫자) : 소수점 첫째 자리를 반올림</li>
+    <li>ceil(숫자) : 소수점 자리를 무조건 올림</li>
+    <li>floor(숫자) : 소수점 자리를 무조건 절삭</li>
+    <li>abs(숫자) : 수의 절대값을 반환</li>
+    <li>random(숫자) : 0과 1사이의 난수를 표시</li>
+  </ul>
+
+  <h3>실습예제 1번) 이벤트 당첨자 뽑기</h3>
+  <p>전체 응모자의 인원수를 입력하면 번호를 무작위로 골라 추첨해주는 식 만들기</p>
+
+  <script>
+    let n1=10;
+    let n2=20;
+    let n3=123.45;
+
+    let max=Math.max(n1,n2);
+    document.write('최대값 : '+max+'<br>'); // 10과 20중 최대값 20을 출력
+    
+    let min=Math.min(n1,n2);
+    document.write('최소값 : '+min+'<br>'); // 10과 20중 최소값 10을 출력
+
+    let round=Math.round(n3);
+    document.write('반올림 : '+round+'<br>'); // 소수점 첫째자리 반올림 123
+
+    let ceil=Math.ceil(n3);
+    document.write('무조건 올림 : '+ceil+'<br>'); // 소수점 자리를 무조건 올림 124
+
+    let floor=Math.floor(n3);
+    document.write('무조건 절삭 : '+floor+'<br>'); // 소수점 자리를 무조건 절삭 123
+
+    let abs=Math.abs(-123.456);
+    document.write('절대값 : '+abs+'<br>'); // 음수였는데 절대값으로 바뀜
+
+    let random=Math.random();
+    document.write('랜덤 : '+random+'<br>');  // 랜덤으로 0과 1사이의 난수 표시
+
+    document.write('<hr>');
+
+    // (실습예제 1)
+    // 1. 전체 인원수를 입력하기
+    let total=prompt('전체 인원수를 입력하세요. (1~20)')
+
+    // 2. 입력된 변수값을 사용하여 무작위로 번호를 추출
+    let ran = Math.ceil(Math.random()*total); // 1~20
+
+    // 3. 결과 내용을 출력하기
+    document.write('전체 응모자수 : '+total+'명<br>');
+    document.write('<strong>당첨 번호는 '+ran+'번</storng> 입니다.<br>');
+  </script>
+
+</body>
+</html>

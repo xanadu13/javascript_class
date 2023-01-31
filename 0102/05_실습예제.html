@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>랜덤으로 이미지 뜨게하기</title>
+</head>
+<body>
+  <h3>실습예제 2번) 랜덤으로 이미지 뜨게하기</h3>
+  <div id="banner"></div>
+
+  <script>
+    let num=Math.ceil(Math.random()*8);
+    // console.log(num); 검증
+    document.getElementById('banner').innerHTML='<img src="./img/banner0'+num+'.jpg" alt="">';
+  </script>
+</body>
+</html>

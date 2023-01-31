@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿠팡 실습예제</title>
+  <style>
+
+    *{margin:0px; padding: 0px;}
+    ul, li{list-style: none;}
+    a{text-decoration: none; color: #333;}
+
+    .banner{
+      width:100%;
+      position: relative;
+    }
+    .banner div img{
+      width:100%; display: block;
+      margin: 0px auto;
+    }
+
+    nav{
+      position: absolute;
+      top: 155px; right: 20%;
+      box-shadow: 0px 0px 3px 0px #666;
+    }
+    nav ul li a img{
+      display: block;
+    }
+    nav ul li a img:hover{
+      outline: 2px solid #3e8ae0;
+    }
+
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    
+    $(function(){
+
+      let big_img = $('.banner nav ul li a img');
+      let n=1;
+
+      $(big_img).mouseenter(function(){
+        let url = $(this).attr('src');
+        big_url = url.replace("nav", "");
+
+        $('.big_img').attr('src', big_url);
+      });
+
+      function move(){
+        if(n==7){
+        n=1;
+      }else{
+        $('.big_img').attr('src','./images03/0'+n+'.jpg');
+        // $('nav ul li img').eq(n-1).css('outline','2px solid #3e8ae0');
+        // $('nav ul li img').eq(n).css('outline','none');
+        n++;
+      };
+    };
+
+      let Timer = setInterval(move, 2000);
+
+    });
+
+  </script>
+</head>
+<body>
+  <article class="banner">
+    <div>
+      <img src="./images03/nav.jpg" alt="헤더">
+      <img src="./images03/01.jpg" alt="큰사진" class="big_img">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#" title="네비게이션1"><img src="./images03/nav01.jpg" alt="네비게이션1"></a></li>
+        <li><a href="#" title="네비게이션2"><img src="./images03/nav02.jpg" alt="네비게이션2"></a></li>
+        <li><a href="#" title="네비게이션3"><img src="./images03/nav03.jpg" alt="네비게이션3"></a></li>
+        <li><a href="#" title="네비게이션4"><img src="./images03/nav04.jpg" alt="네비게이션4"></a></li>
+        <li><a href="#" title="네비게이션5"><img src="./images03/nav05.jpg" alt="네비게이션5"></a></li>
+        <li><a href="#" title="네비게이션6"><img src="./images03/nav06.jpg" alt="네비게이션6"></a></li>
+      </ul>
+    </nav>
+
+  </article>
+</body>
+</html>

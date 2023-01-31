@@ -1,0 +1,5 @@
+getElementById()는 무엇인가?
+id를 통해 엘리먼트를 반환한다. 만약 document에 구체적인 ID의 엘리먼트가 없다면 null을 반환한다.
+
+querySelector()는 무엇인가?
+selector의 구체적인 그룹과 일치하는 document안 첫번째 엘리먼트를 반환한다. 일치하는게 없으면 null반환한다.

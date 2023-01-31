@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스타벅스 페이지</title>
+  <style>
+    article{
+      position: relative;
+      width: 100%;
+    }
+    article img:first-of-type{
+      width: 100%;
+    }
+    article img:nth-of-type(2){
+      top: 74px;
+      right: 594px;
+      width: 144px;
+      display: none;
+    }
+    article img:nth-of-type(3){
+      top: 41px;
+      right: 737px;
+      width: 200px;
+      display: none;
+    }
+    article img:nth-of-type(4){
+      top: 208px;
+      right: 646px;
+      width: 252px;
+      display: none;
+    }
+    article img:nth-of-type(5){
+      top: 169px;
+      right: 890px;
+      width: 180px;
+      display: none;
+    }
+    article img:nth-of-type(6){
+      top: 287px;
+      right: 445px;
+      width: 340px;
+      display: none;
+    }
+    article img:nth-of-type(7){
+      top: 167px;
+      right: 443px;
+      width: 140px;
+      display: none;
+    }
+    article img:nth-of-type(8){
+      top: 68px;
+      left: 420px;
+      width: 300px;
+      display: none;
+    }
+    article img:last-of-type{
+      top: 22px;
+      right: 296px;
+      width: 100px;
+    }
+    article img{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <img src="./images/bev_bg.jpg" alt="배경이미지">
+    <img src="./images/bev1_cup.png" alt="이미지1">
+    <img src="./images/bev1_txt.png" alt="이미지1 텍스트">
+    <img src="./images/bev2_cup.png" alt="이미지2">
+    <img src="./images/bev2_txt.png" alt="이미지2 텍스트">
+    <img src="./images/bev3_cup.png" alt="이미지3">
+    <img src="./images/bev3_txt.png" alt="이미지3 텍스트">
+    <img src="./images/m_18_emblem.png" alt="메인 텍스트">
+    <img src="./images/badge_main_autumn2.png" alt="뱃지">
+  </article>
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+  <script>
+
+    $(function(){
+
+      $('article img').eq(7).fadeIn();
+
+      $('article img').delay(1000).eq(1).fadeIn();
+      $('article img').delay(500).eq(2).fadeIn();
+      $('article img').delay(1000).eq(3).fadeIn();
+      $('article img').delay(500).eq(4).fadeIn();
+      $('article img').delay(1000).eq(5).fadeIn();
+      $('article img').delay(500).eq(6).fadeIn();
+
+    })
+
+  </script>
+
+</body>
+</html>

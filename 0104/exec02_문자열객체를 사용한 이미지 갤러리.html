@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>exec02_문자열객체를 사용한 이미지 갤러리</title>
+  <style>
+    *{padding:0px; margin:0px; list-style: none; text-decoration: none;}
+    #img_box{
+      width: 600px;
+      margin: 0px auto;
+      overflow: hidden;
+      border: solid 3px #111;
+    }
+    #img_box .lnb{display:flex;}
+    #img_box img{width:100%; cursor: pointer;}
+    #img_box .lnb img:hover{opacity:0.7;}
+  </style>
+  <script src="./js/main.js" defer></script>
+</head>
+<body>
+  <h2>exec02_문자열객체를 사용한 이미지 갤러리</h2>
+  <p>article 태그로 gallery 박스를 만든다.</p>
+  <p>목록태그를 사용하여 이미지를 넣고 크기를 설정하여 썸네일 이미지를 만든다.</p>
+  <p>목록태그 아래 이미지를 삽입하여 썸네일 이미지 클릭시 해당 사진이 big_img로 나오게 한다.</p><br><br>
+
+  <article id="img_box">
+    <ul class="lnb">
+      <li><img src="./images/img_main_banner_160110.jpg" alt="이미지" class="s_img"></li>
+      <li><img src="./images/img_main_banner_160830.jpg" alt="이미지" class="s_img"></li>
+      <li><img src="./images/img_main_banner_161004.jpg" alt="이미지" class="s_img" ></li>
+      <li><img src="./images/img_main_banner_161026.jpg" alt="이미지" class="s_img"></li>
+      <li><img src="./images/img_main_banner_161031.jpg" alt="이미지" class="s_img"></li>
+    </ul>
+
+    <div id="big_img">
+      <img src="./images/img_main_banner_160110.jpg" alt="" id="photo">
+    </div>
+  </article>
+</body>
+</html>

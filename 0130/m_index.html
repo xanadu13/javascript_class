@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에뛰드 모바일 웹 내비게이션</title>
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+  <!-- jQuery 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+
+  <script>
+
+  $(function(){
+
+  // 1. 토글버튼 변수
+  let t_btn = $('#toggle');
+  let t_n = 1;
+  
+  
+  // 2. 토글버튼 클릭시
+  t_btn.click(function(){
+    $(this).find('span').first().toggleClass('act01');
+    $(this).find('span').eq(1).toggleClass('act02');
+    $(this).find('span').last().toggleClass('act03');
+
+    // 토글버튼 클릭시 wrap의 위치가 왼쪽으로부터 80%위치에 배치가 된다.
+    $('#wrap').toggleClass('wrap_pos');
+      if(t_n==1){
+        $('body').css('overflow','hidden');
+        t_n=0;
+      }else{
+        $('body').css('overflow','scroll');
+        t_n=1;
+      }
+      // 토글버튼 클릭시 body 태그의 스크롤바 숨기거나 다시 나오게 하기
+    });
+
+    // 3. 토글버튼 고정
+    $(window).scroll(function(){
+      let sPos = $(this).scrollTop(); // 브라우저의 세로 스크롤 값
+      // console.log(sPos);
+
+      if(sPos>0){
+        $('#toggle').addClass('on');
+      }else{
+        $('#toggle').removeClass('on');
+      };
+
+    });
+    
+
+    // 4. 슬라이드 스크립트
+    
+    let s_num = 0;
+
+    setInterval(function(){
+
+      if(s_num > 2){
+        s_num = 0;
+      }
+      $('.slide ul li').removeClass('active');
+      $('.slide ul li').eq(s_num).addClass('active');
+
+      s_num++;
+
+      console.log(s_num);
+
+    }, 2000);
+
+
+  });
+  
+  </script>
+
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <h1><a href="m_index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo.png" alt="메인 로고">
+      </a></h1>
+
+      <div id="toggle">
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+      </div>
+    </header>
+
+    <!-- 글로벌 내비게이션 -->
+    <nav class="gnb">
+      <ul>
+        <li><a href="#" title="">menu01</a></li>
+        <li><a href="#" title="">menu02</a></li>
+        <li><a href="#" title="">menu03</a></li>
+        <li><a href="#" title="">menu04</a></li>
+        <li><a href="#" title="">menu05</a></li>
+        <li><a href="#" title="">menu06</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- 슬라이드 3장 (좌우 or 페이드인 or 상하 슬라이드)-->
+      <article class="slide">
+        <ul>
+          <li><a href="#" title=""><img src="./images/slide01_01.jpg" alt="배너이미지"></a></li>
+          <li><a href="#" title=""><img src="./images/slide02_02.jpg" alt="배너이미지"></a></li>
+          <li><a href="#" title=""><img src="./images/slide03_03.jpg" alt="배너이미지"></a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer>
+      <address>Copyright 2023 &copy; 에뛰드하우스 Allrights reserved.</address>
+    </footer>
+
+  </div>
+</body>
+</html>

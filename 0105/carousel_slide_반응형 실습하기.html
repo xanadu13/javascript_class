@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐러셀_carousel_slide3</title>
+  <style>
+    .slide-wrapper *{margin:0px; padding:0px;}
+    ul,li,ol{list-style: none;}
+    a{text-decoration: none; color:#333;}
+
+    .slide-wrapper{
+      position:relative;
+      width: 100%; height: 100%;
+      margin:0px auto;
+      border: 3px solid #000;
+      overflow: hidden;
+    }
+    .slide{
+      width: 300%; height: 100%;
+      display: flex;
+      position: relative; left:0px;
+      transition: 0.3s;
+    }
+    .slide>li{
+      width:100%;
+      height:100%;
+    }
+    .slide>li div{
+      width:100%;
+      height: 70vh;
+      display: block;
+    }
+    .slide-wrapper a{
+      position: absolute; top:50%;
+      background: #333;
+      color:#fff;
+      padding: 10px;
+      z-index: 500;
+    }
+    .slide-wrapper a:first-of-type{left:0px;}
+    .slide-wrapper a:last-of-type{right:0px;}
+    ul>li:first-child>div{
+      background-image: url(https://images.samsung.com/kdp/cms_contents/218869/61cb155f-c3bd-40c4-82c8-d999dbfedc0a.jpg?$ORIGIN_JPG$);
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    ul>li:nth-child(2)>div{
+      background-image: url(https://images.samsung.com/kdp/cms_contents/218334/8deb1cc3-205b-4885-9672-c0f6b1781520.jpg?$ORIGIN_JPG$);
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    ul>li:last-child>div{
+      background-image: url(https://images.samsung.com/kdp/cms_contents/220953/14ecc2b4-1e4d-4b22-9522-07d5a914c29b.jpg?$ORIGIN_JPG$);
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+  <script src="./script/carousel3.js" defer></script>
+</head>
+<body>
+  
+  <article class="slide-wrapper">
+    <a href="#none;" title="이전" id="prev_btn">이전</a>
+    <a href="#none;" title="다음" id="next_btn">다음</a>
+    <ul class="slide">
+      <li>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+      </li>
+  </article>
+
+  <!--
+    background 이미지 반응형 참고 사이트!!!!
+    https://velog.io/@juno7803/%EB%B0%98%EC%9D%91%ED%98%95%EC%9C%BC%EB%A1%9C-%EC%A2%85%ED%9A%A1%EB%B9%84-%EC%9C%A0%EC%A7%80%ED%95%98%EC%97%AC-%EC%9D%B4%EB%AF%B8%EC%A7%80-%ED%91%9C%EC%8B%9C%ED%95%98%EA%B8%B0
+  -->
+</body>
+</html>

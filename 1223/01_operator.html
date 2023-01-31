@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_자바스크립트 연산자(operator)</title>
+  <script>
+    // 1. 산술연산자
+    let a = 10;
+    let b = 5;
+
+    let res = a+b; //10+5
+    document.write(res+'<br>');
+    res = a%b // 10%5
+    document.write(res+'<br>');
+
+    // 2. 비교연산자
+    res = a > b; // 10>5
+    document.write(res+': 10이 5보다 크기 때문에 true<br>');
+    res = a < b; // 10<5
+    document.write(res+': 5가 10보다 작기 때문에 false<br>');
+    res = a==b; //10이 5와 같다
+    document.write(res+': 10이 5와 같지 않기 때문에 flase<br>');
+
+    // 3. 대입연산자 a=b, a+=b, a-=b
+    res = a = b; //b를 a에 대입해라
+    document.write(res+': 5를 a에 담았기 때문에 a는 5가 들어감<br>');
+
+    res = a+=b;
+    document.write(res+': 위 수식에서 a에 5가 입력되었기 때문에 a+=b(a+b)의 결과는 5+5이다.<br>');
+
+    // 4. 증감연산자 : ++ (1씩 증가), --(1씩 감소)
+    res = ++a; // a에 1을 더하고 변수에 저장한다
+    document.write(res+'<br>');
+    // ++ 기호를 변수 앞에 작성시 먼저 1을 더하고 출력 ++a
+    // ++ 기호를 변수 뒤에 작성시 출력하고 1을 나중에 더한다 a++
+
+    // 5. 논리연산자 : && (and), ||(or), !(not)
+    console.log((1>2)&&(1<2)); // 둘 다 모두 만족할 경우에만 true
+    console.log((1>2)||(1<2)); // 둘 중 하나라도 만족하면 true
+
+    // 6. 문자열 결합연산자 (+)
+    let c, d, e, f;
+    c = '웹퍼블리셔'; // 문자
+    d = '프론트엔드'; // 문자
+    e = 20221128; // 숫자
+    f = 1; //숫자
+    document.write(c+d+e+': 문자열 결합이 된다.<br>');
+    document.write(e+f+': 숫자 연산결과가 된다<br>');
+
+    // 7. 삼향조건 연산자 : 조건식? 참일때 실행문1: 거짓일때 실행문2;
+    // 예시. 1>2? '조건식이 맞습니다.':'조건식이 맞지 않습니다.'
+
+    //프롬포트를 사용하여 사용자가 아이디를 직접 입력하게 한다.
+    let id = prompt('아이디를 입력하세요.');
+    let pw = prompt('패스워드를 입력하세요.');
+    id == 'id' && pw == 'pw' ? document.write('로그인 성공') : document.write('로그인 실패');
+    
+  </script>
+</head>
+<body>
+  <h2>01_자바스크립트 연산자(operator)</h2>
+  <p>자바스크립트 연산자는 사용자가 조건식을 만들어서 원하는 결과를 출력하고자 할 때 사용하는 기호이다.</p>
+  <ul>
+    <li>산술연산자 : +, -, *, /, %(나머지)</li>
+    <li>문자열 결합연산자 : + (문자+숫자, 문자+문자일 경우)</li>
+    <li>비교연산자 : >, <, >=, <=, ==(값이 같다), ===(값, 형식이 모두 같다)</li>
+    <li>대입연산자 : =, +=, -=</li>
+    <li>증감연산자 : ++(1씩 증감), --(1씩 감소)</li>
+    <li>논리연산자 : &&, ||, !=</li>
+    <li>삼향조건연산자 : 조건식? 참일때값:거짓일때값;</li>
+    <li>타입연산자 : typeof (데이터의 형식을 체크해줌)</li>
+  </ul>
+</body>
+</html>

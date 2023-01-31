@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_자바스크립트 문서출력방법 p.449</title>
+  <style>
+    address{
+      background-color: #ff0; line-height: 50px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    //1. document.write로 내용 출력하기
+    // document.write('<address>copyrights&copy;2022 allrights reserved.</address>');
+
+    //2. window.alert로 내용 출력하기
+    // window.alert('약관 내용에 동의하셔야 합니다.')
+    // window.confirm('주문을 완료하시겠습니까?')
+
+    //3. colsole.log로 내용 출력하기
+    // console.log(20221221);
+  </script>
+  
+</head>
+<body>
+  <h2>01_자바스크립트 문서출력방법 p.449</h2>
+  <p>자바스크립트에서 다양한 방식으로 데이터 출력하기</p>
+  <ol>
+    <li>document 객체에 write 메서드를 사용 - document.write('출력할 내용');</li>
+    <li>window 객체에 활용하여 메세지 띄우기 - window.alert('메세지 내용');</li>
+    <li>브라우저 개발자모드의 console창에서 출력하기 - console.log(출력할 내용);</li>
+    <li>document 객체의 innerHTML메서드로 내용 출력하기 - document.getElement('id명').innerHTML='출력할내용';</li>
+  </ol>
+
+  <h3>자바스크립트 소스코드 작성시 주의해야 할 규칙</h3>
+  <ol>
+    <li>코드를 보기좋게 들여쓰기 한다. vs code에서는 tab키가 단축키</li>
+    <li>소스코드의 맨마지막에는 ;(세미콜론)을 작성한다.</li>
+    <li>소스코드에 주석을 표시하면 나중에 이해하기 쉽다. 2가지 종류의 주석이 있음.<br>
+      <pre>
+        // 한줄주석
+        /*
+        두줄이상주석
+        */
+      </pre>
+    </li>
+    <li>코드는 영문 대소문자를 반드시 구별하면서 작성한다.</li>
+    <li>스크립트에서는 변수명, 함수명, 속성명 등을 작성시 기존에 스크립트 명령어와 겹치지 않게 작성해야 한다. 목적이나 용도에 맞게 이름을 작성함.</li>
+    <li>문자데이터를 입력하고자 할 때는 '홀따옴표', "쌍따옴표"를 작성하는데 겹치지 않게 한다.</li>
+  </ol>
+
+  <div id="box"></div>
+
+  <script>
+    //4 .  document.geElementById('id명')
+    //순서 중요, html > css > script 순으로 동작이 된다.
+    document.getElementById('box').innerHTML = '<p>#box요소에 내용 삽입하기</p>'
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>효과메서드를 활용한 fadeIn_Out_slide</title>
+
+  <style>
+  *{margin: 0px; padding: 0px;}
+  ol, li, ul{list-style:none;}
+  a{color: #333; text-decoration: none;}
+  h2, p, dl, dt, dd{
+    padding: 10px;
+  }
+  article{
+    border: 5px solid #f00;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  article::after{
+    content: "";
+    display: block;
+    padding-bottom: 28%;
+  }
+  article > h2{display: none;}
+  article img {
+    width: 100%;
+    position:absolute;
+  }
+  article a:first-of-type img {z-index: 5;}
+  article a:nth-of-type(2) img {z-index: 4;}
+  article a:nth-of-type(3) img {z-index: 3;}
+  article a:nth-of-type(4) img {z-index: 2;}
+  article a:last-of-type img {z-index: 1;}
+
+  /* 컨트롤 버튼 서식 */
+  .c_btn{
+    color: #fff;
+    position: absolute; bottom: 3%; left:50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  </style>
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+  <h2>효과메서드를 활용한 fadeIn_Out_slide</h2>
+  <p>이미지 5장을 순서대로 겹치게 하여 4초마다 fadeIn, fadeOut효과 주기</p>
+  <dl>
+    <dt>구현순서</dt>
+    <dd>1. html태그로 이미지 5장을 순서대로 삽입하고, 목록태그를 활용하여 이미지 번호와 일시정지, 플레이버튼 목록을 작성한다.</dd>
+    <dd>2. css를 활용하여 이미지 5장을 position속성으로 겹치게하고 z-index속성으로 위/아래 순서를 정한다.</dd>
+    <dd>3. 제이쿼리를 사용하여 4초 뒤에 현재 보이는 이미지 숨기고, 다음 이미지가 보이도록 하며, 해당하는 이미지가 보일때 페이지 번호를 표시한다.</dd>
+    <dd>4. 일시정지 버튼을 클릭시 시간함수(setInterval)를 제거하여 슬라이드가 멈추게 하고, 플레이버튼 클릭시 시간함수(setInterval)를 다시 설정하여 움직이도록 한다.</dd>
+    <dd>5. window객체의 resize이벤트를 사용하여 화면의 너비가 조정되면 이미지크기와 부모요소크기도 같이 변하게 하여 반응형 슬라이드를 만든다.</dd>
+  </dl>
+
+  <article>
+    <h2>fadeIn_Out 반응형슬라이드</h2>
+    <div>
+      <a href="#" title="배너1"><img src="./images/01.jpg" alt="배너1"></a>
+      <a href="#" title="배너2"><img src="./images/02.jpg" alt="배너2"></a>
+      <a href="#" title="배너3"><img src="./images/03.jpg" alt="배너3"></a>
+      <a href="#" title="배너4"><img src="./images/04.jpg" alt="배너4"></a>
+      <a href="#" title="배너5"><img src="./images/05.jpg" alt="배너5"></a>
+    </div>
+    <ul class="c_btn">
+      <li>&nbsp;</li> <!-- 페이지 번호 -->
+      <li><i class="fas fa-pause"></i></li> <!-- 정지/플레이 아이콘 나오는 곳 -->
+    </ul>
+  </article>
+
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  
+  <script>
+
+    $(function(){
+      
+      //1. 초기값
+      let n = 0;
+
+      //2. 페이지 번호가 나오게 한다. 1/5
+      $('.c_btn li:first-child').html((n+1)+'/5');
+
+      //3. 함수 만들기 fadeinOut
+      function fadeInOut(){
+        $('article a img').stop().fadeOut(); // 첫번째 a요소를 선택하여 fadeOut 해라
+        if(n==4){ // 마지막 이미지라면
+          n=0; // 처음 이미지가 나오게 0을 대입
+        }else{
+          n++; // 1씩 증가하여 다음 이미지가 나오게 한다
+        }
+        console.log(n);
+        $('article a img').eq(n).stop().fadeIn(); // 다음 번호에 맞는 이미지가 나옴
+
+        $('article .c_btn li').eq(0).html((n+1)+'/5');
+      }
+
+      //4. 시간 객체를 사용하여 4초마다 반복 함수 호출하기
+      let Timer = setInterval(fadeInOut, 2000);
+
+      //5. 정지 버튼 누르면 시간을 정지, 플레이 버튼으로 변경되게 하고 다시 누르면 시간을 재생, 일시정지 버튼으로 변경되게 하기
+      $('article .c_btn li:last-child').click(function(){ // 정지버튼을 클릭시
+        if($(this).find('i').hasClass('fas fa-pause')==true){ //해당 클래스가 있는지 판단하여 있으면 아래 내용을 실행하고 (has class:: true, false 값 판별)
+          clearInterval(Timer); //시간을 제거하여 멈추게 한다
+          $(this).find('i').attr('class','fas fa-play'); //클래스명을 찾아서 강제로 변경(플레이버튼으로)
+        }else{ //fa-pause 클래스명이 없으면 아래 내용을 실행한다
+          Timer = setInterval(fadeInOut, 2000); //시간을 다시 넣어서 움직이게한다
+          $(this).find('i').attr('class','fas fa-pause');
+        }
+      });
+
+
+
+      });
+
+
+
+  </script>
+
+  
+</body>
+</html>

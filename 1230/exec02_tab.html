@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBC 많이본뉴스 탭메뉴 만들기</title>
+  <style>
+    /* 웹폰트 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+    *{padding:0px; margin:0px; list-style: none; text-decoration: none;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    a:link, a:visited, a:active{
+      color: #111;
+    }
+    .news{
+      width:340px;
+      /* border: 1px solid #111; */
+      margin: 20px;
+      height:fit-content;
+    }
+    .header{
+      border-bottom: 1px solid #aaa;
+      height: 45px;
+      padding: 10px 10px;
+      margin-bottom: 10px;
+    }
+    ul li{
+      font-size: 18px;
+      width:320px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      padding: 12px;
+      text-align: justify;
+      letter-spacing: -1.5px;
+    }
+    .header .link{
+      float: right;
+      line-height: 50px;
+      font-size:16px;
+      color:#999;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .bar{
+      font-size: 10px;
+      color: #aaa;
+      margin: 0px 1px;
+      font-weight: 300;
+    }
+    h3{
+      display: inline;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: -1.5px;
+    }
+    .num{
+      color:rgb(40, 84, 230);
+      font-weight: bold;
+      margin-right: 15px;
+      padding-left: 5px;
+      font-size: 20px;
+    }
+    #portal{display: none;}
+    #sns{display: none;}
+    #youtube{display: none;}
+    #mbc_btn{color: blue;}
+  </style>
+</head>
+<body>
+
+  <article class="news">
+
+    <div class="header">
+      <h3>많이 본 뉴스</h3>
+      <span class="link">
+        <a href="#" title="mbc" id="mbc_btn"><span>MBC</span></a>
+        <span class="bar">|</span>
+        <a href="#" title="포털" id="portal_btn"><span>포털</span></a>
+        <span class="bar">|</span>
+        <a href="#" title="sns" id="sns_btn"><span>SNS</span></a>
+        <span class="bar">|</span>
+        <a href="#" title="유튜브" id="youtube_btn"><span>유튜브</span></a>
+      </span>
+    </div>
+
+    <ul id="mbc">
+      <li><a href="#" title="기사"><span class="num">1</span>화물차 운전자 입건‥'펑' 소리 나더니 불</a></li>
+      <li><a href="#" title="기사"><span class="num">2</span>한 총리 "중국발 입국 전후 코로나 검사 의무화"‥단기비자 발급 제한</a></li>
+      <li><a href="#" title="기사"><span class="num">3</span>'연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+      <li><a href="#" title="기사"><span class="num">4</span>'신생아 4명 사망' 이대목동병원 의료진 무죄 확정</a></li>
+      <li><a href="#" title="기사"><span class="num">5</span>윤 대통령 "다수 의석 야당의 발목잡기로 법인세 최고세율 인하 안돼"</a></li>
+      <li><a href="#" title="기사"><span class="num">6</span>[World Now] 영면에 든 펠레‥예전 활약 영상</a></li>
+      <li><a href="#" title="기사"><span class="num">7</span>'제2경인고속 화재' 최초 화재 운전자 입건</a></li>
+    </ul>
+
+    <ul id="portal">
+      <li><a href="#" title="기사"><span class="num">1</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+      <li><a href="#" title="기사"><span class="num">2</span>[단독] 운동선수·유흥업소 '선수'까지 뇌전증 연기</a></li>
+      <li><a href="#" title="기사"><span class="num">3</span>[와글와글] 인기 요가 강사, 알고 보니 FBI 수배 '살인 용의자'</a></li>
+      <li><a href="#" title="기사"><span class="num">4</span>잿더미 된 차량 그대로‥이 시각 갈현고가교</a></li>
+      <li><a href="#" title="기사"><span class="num">5</span>'신생아 4명 사망' 이대목동병원 의료진 무죄 확정</a></li>
+      <li><a href="#" title="기사"><span class="num">6</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+      <li><a href="#" title="기사"><span class="num">7</span>윤 대통령 "우월한 전쟁 준비해야" vs 野 "'안보'는 전쟁 안나게 하는 것"</a></li>
+      <li><a href="#" title="기사"><span class="num">8</span>연쇄 살인범' 신상 공개‥31살 이기영</a></li>
+      <li><a href="#" title="기사"><span class="num">9</span>한 총리 "중국발 입국 전후 코로나 검사 의무화"‥단기비자 발급 제한</a></li>
+      <li><a href="#" title="기사"><span class="num">10</span>[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+    </ul>
+
+    <ul id="sns">
+      <li><a href="#" title="기사"><span class="num">1</span>황희찬 역전골, 팬들이 뽑은 'KFA 올해의 골'</a></li>
+      <li><a href="#" title="기사"><span class="num">2</span>MBC, 가장 즐겨보는 뉴스 채널 1위</a></li>
+      <li><a href="#" title="기사"><span class="num">3</span>터널을 집어 삼킨 '화마'에 5명 숨지고 37명</a></li>
+      <li><a href="#" title="기사"><span class="num">4</span>[World Now] 영면에 든 펠레‥예전 활약 영상</a></li>
+      <li><a href="#" title="기사"><span class="num">5</span>경북 구미 고속도로서 연쇄추돌‥2명 사망</a></li>
+      <li><a href="#" title="기사"><span class="num">6</span>'축구 전설'로 남은 펠레‥암투병 끝 별세</a></li>
+      <li><a href="#" title="기사"><span class="num">7</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름한 사람이었다"</a></li>
+      <li><a href="#" title="기사"><span class="num">8</span>전주 얼굴없는 천사‥ 23년간 8억 8천여만 원 기부</a></li>
+      <li><a href="#" title="기사"><span class="num">9</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+      <li><a href="#" title="기사"><span class="num">10</span>[단독] 빌라왕 뒤의 빌라왕‥끝은 어디인가?</a></li>
+    </ul>
+
+    <ul id="youtube">
+      <li><a href="#" title="#"><span class="num">1</span>오늘 새벽 또 무인기 소동‥굉음에 놀라 '깜짝'</a></li>
+      <li><a href="#" title="#"><span class="num">2</span>[뉴스외전 경제 '쏙'] '1/4 토막' 테슬라의 몰락‥"고양이 밥도 못 맡긴다"</a></li>
+      <li><a href="#" title="#"><span class="num">3</span>"차 두고 뛰쳐나와" 순식간에 번진 불길에 '필사의 탈출'</a></li>
+      <li><a href="#" title="#"><span class="num">4</span>[와글와글] "네가 왜 거기서 나와"‥ 대형 쇼핑몰 5층에 '경찰서'?</a></li>
+      <li><a href="#" title="#"><span class="num">5</span>'비밀 경찰서' 의심 중식당 "추악한 세력 폭로하겠다"</a></li>
+      <li><a href="#" title="#"><span class="num">6</span>'비밀 경찰서' 지목 중식당 "오늘 폭로하겠다" 예고</a></li>
+      <li><a href="#" title="#"><span class="num">7</span>"도대체 뭐한 거냐" 대통령 질책에 군 "억울하다" 볼멘소리도</a></li>
+      <li><a href="#" title="#"><span class="num">8</span>[와글와글] "아무도 없다 훔치자!" 재해 틈탄 도둑들</a></li>
+      <li><a href="#" title="#"><span class="num">9</span>"김정은이 남친인가?" 미국, 독일에서 인종차별 범죄 잇따라</a></li>
+      <li><a href="#" title="#"><span class="num">10</span>[단독] 숨진 빌라왕 송 모 씨‥"일감 받아 심부름"</a></li>
+    </ul>
+  </article>
+
+  <!-- 스크립트 작성 -->
+  <script>
+    
+    const mbcBtn = document.getElementById('mbc_btn');
+    mbcBtn.addEventListener('click',function(){
+      document.getElementById('mbc').style.display='block';
+      document.getElementById('portal').style.display='none';
+      document.getElementById('sns').style.display='none';
+      document.getElementById('youtube').style.display='none';
+
+      document.getElementById('mbc_btn').style.color='blue';
+      document.getElementById('portal_btn').style.color='#111';
+      document.getElementById('sns_btn').style.color='#111';
+      document.getElementById('youtube_btn').style.color='#111';
+    })
+    const portalBtn = document.getElementById('portal_btn');
+    portalBtn.addEventListener('click',function(){
+      document.getElementById('portal').style.display='block';
+      document.getElementById('mbc').style.display='none';
+      document.getElementById('sns').style.display='none';
+      document.getElementById('youtube').style.display='none';
+
+      document.getElementById('portal_btn').style.color='blue';
+      document.getElementById('mbc_btn').style.color='#111';
+      document.getElementById('sns_btn').style.color='#111';
+      document.getElementById('youtube_btn').style.color='#111';
+    })
+    const snsBtn = document.getElementById('sns_btn');
+    snsBtn.addEventListener('click',function(){
+      document.getElementById('sns').style.display='block';
+      document.getElementById('mbc').style.display='none';
+      document.getElementById('portal').style.display='none';
+      document.getElementById('youtube').style.display='none';
+
+      document.getElementById('sns_btn').style.color='blue';
+      document.getElementById('mbc_btn').style.color='#111';
+      document.getElementById('portal_btn').style.color='#111';
+      document.getElementById('youtube_btn').style.color='#111';
+    })
+    const youtubeBtn= document.getElementById('youtube_btn');
+    youtubeBtn.addEventListener('click',function(){
+      document.getElementById('youtube').style.display='block';
+      document.getElementById('mbc').style.display='none';
+      document.getElementById('portal').style.display='none';
+      document.getElementById('sns').style.display='none';
+
+      document.getElementById('youtube_btn').style.color='blue';
+      document.getElementById('mbc_btn').style.color='#111';
+      document.getElementById('portal_btn').style.color='#111';
+      document.getElementById('sns_btn').style.color='#111';
+    })
+
+  </script>
+</body>
+</html>

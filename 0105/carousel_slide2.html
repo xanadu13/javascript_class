@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐러셀_carousel_slide2</title>
+  <style>
+    .slide-wrapper *{margin:0px; padding:0px;}
+    ul,li,ol{list-style: none;}
+    a{text-decoration: none; color:#333;}
+
+    .slide-wrapper{
+      position:relative;
+      width: 960px; height:400px;
+      margin:0px auto;
+      border: 3px solid #000;
+      overflow: hidden;
+    }
+    .slide{
+      width: 2940px;
+      display: flex;
+      position: relative; left:0px;
+      transition: 0.3s;
+    }
+    .slide>li div{
+      width:960px; height: 400px;
+      background: #ff0;
+    }
+    .slide > li:not(:last-child){
+      margin-right: 30px;
+    }
+    .slide-wrapper a{
+      position: absolute; top:50%;
+      background: #333;
+      color:#fff;
+      padding: 10px;
+      z-index: 500;
+    }
+    .slide-wrapper a:first-of-type{left:0px;}
+    .slide-wrapper a:last-of-type{right:0px;}
+    ul>li:first-child>div{
+      background-image: url(./img/img1.jpg);
+    }
+    ul>li:nth-child(2)>div{
+      background-image: url(./img/img3.jpg);
+    }
+    ul>li:last-child>div{
+      background-image: url(./img/img4.jpg);
+    }
+  </style>
+  <script src="./script/carousel2.js" defer></script>
+</head>
+<body>
+  
+  <article class="slide-wrapper">
+    <a href="#none;" title="이전" id="prev_btn">이전</a>
+    <a href="#none;" title="다음" id="next_btn">다음</a>
+    <ul class="slide">
+      <li>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+      </li>
+      <li>
+        <div></div>
+      </li>
+  </article>
+</body>
+</html>

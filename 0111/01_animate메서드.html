@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제이쿼리_01_animate메서드</title>
+  <style>
+
+    /* 원 움직이기 서식 */
+    .circle{
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgb(255, 119, 78);
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    position: relative; /*현위치(자기자신)가 기준*/
+  }
+
+  /* 캐릭터 움직이기 서식 */
+  #duck{
+    width: 200px;
+    position: relative;
+    z-index: -1;
+  }
+
+  /* 사각형 마우스 오버 서식 */
+  .box{
+    background: rgb(255, 219, 100);
+    width: 60px; height: 60px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  /* 바 서식 */
+  .bar01, .bar02, .bar03{
+    background: rgb(151, 226, 255);
+    width: 20px; height:50px;
+    margin-bottom: 10px;;
+    left: 0px;
+    position:relative;
+  }
+
+  /* 스킬 서식 */
+  *{list-style: none;}
+  
+  .myskill{
+    margin: 0px auto;
+    width: 150px;
+    border: 2px solid #333;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+    z-index: 3;
+  }
+  ul{
+    width: 900px;
+    position:relative;
+    z-index: -3;
+    top: -25px;
+    text-align: center;
+    margin: auto;
+    border: 2px solid #333;
+    border-radius: 30px;
+    padding: 50px 0px 30px 0px;
+  }
+  ul li{
+    margin-bottom: 10px;
+    display:block;
+  }
+  .skill_name{
+    width: 120px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .skill_gage{
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  .skill_bg{
+    background: #ccc;
+    width: 500px; height: 10px;
+    position:relative;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display:inline-block;
+    line-height: 10px;
+    box-shadow: 1px 1px 2px #aaa;
+  }
+  ul li:last-child{
+    margin-bottom: 0px;
+  }
+  .sk{
+    width: 0px; height: 10px;
+    position:absolute; left: 0px; top:0px;
+    border-radius: 5px;
+    display:inline-block;
+  }
+  .skill01{
+    background:rgb(255, 87, 87);
+  }
+  .skill02{
+    background:rgb(255, 136, 81);
+  }
+  .skill03{
+    background:rgb(34, 199, 116);
+  }
+  .skill04{
+    background:rgb(255, 108, 223);
+  }
+  .skill05{
+    background:rgb(100, 100, 255);
+  }
+
+  </style>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- 제이쿼리 UI 라이브러리 (버튼/메뉴/컨텐츠 관련된 서식이 존재)-->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function(){
+
+      // 예제 1번) 버튼 클릭시 원 움직이기
+
+      $('#btn01').click(function(){ //play 버튼 클릭시 애니메이션 동작
+        $('.circle').animate({'left':'800px'}, 500).animate({'left':'0px'}, 1000);
+      });
+
+      $('#btn02').click(function(){ //stop 버튼 클릭시 애니메이션 중지
+        $('.circle').stop();
+      })
+
+      $('#btn03').click(function(){ //원위치 버튼 클릭시 처음 위치로 이동
+        // $('.circle').animate({'left':'0px'});
+        $('.circle').css({'left':'0px'});
+      });
+
+
+      // 예제 2번) 버튼 클릭시 캐릭터 사진 이동하기
+
+      let n = 50; //이동할 초기값
+      $('#l_btn').click(function(){
+        $('#duck').animate({'left':'-='+n}, 200);
+      });
+
+      $('#r_btn').click(function(){
+        $('#duck').animate({'left':'+='+n}, 200);
+      });
+
+      $('#t_btn').click(function(){
+        $('#duck').animate({'top':'-='+n}, 200);
+      });
+
+      $('#b_btn').click(function(){
+        $('#duck').animate({'top':'+='+n}, 200);
+      });
+
+
+      // 예제 3번) box에 마우스 오버시 움직이게 하기
+      $('.box').mouseenter(function(){
+        $(this).animate({'left':'800px'}, 600);
+      });
+
+      $('.box').mouseleave(function(){
+        $(this).animate({'left':'0px'}, 1200);
+      });
+
+
+      // 예제 4번) easing 값 사용하기 (제이쿼리 라이브러리 적용)
+      $('#btn04').click(function(){
+        $('.bar01').animate({'width':'500px'},500,'easeOutQuint');
+      });
+      $('#btn05').click(function(){
+        $('.bar02').animate({'width':'800px'},500,'easeOutElastic');
+      });
+      $('#btn06').click(function(){
+        $('.bar03').animate({'width':'400px'},500,'easeInBounce');
+      });
+
+      // 예제 5번) 능력치 표현하기
+      $('.skill01').animate({'width':'425px'},600,'easeOutQuint');
+      $('.skill02').delay(300).animate({'width':'425px'},600,'easeOutQuint');
+      $('.skill03').delay(600).animate({'width':'250px'},600,'easeOutQuint');
+      $('.skill04').delay(900).animate({'width':'300px'},600,'easeOutQuint');
+      $('.skill05').delay(1200).animate({'width':'450px'},600,'easeOutQuint');
+
+
+
+    });
+  </script>
+</head>
+<body>
+  <h2>제이쿼리_01_animate메서드</h2>
+  <p>제이쿼리에서는 효과와 애니메이트 메소드를 사용하여 사용자가 선택한 요소를 다양하게 움직이게 만들 수 있다.</p>
+
+  <h3>1. animate 메소드 작성법</h3>
+  <p>$('대상').animate({'속성:'값'}, 시간, '가속도', 콜백함수);</p>
+  <p>{'속성':'값'} : CSS 속성 값을 말하며, '값'에는 자바스크립트 변수나 연산자를 사용할 수 있다.</p>
+  <p>시간 - 애니메이션이 동작하는 시간을 말하며 1/1000초 = 1초를 나타냄</p>
+  <p>가속도 - easing 메소드를 활용한 값을 말함 (이미지 참조)</p>
+  <p>콜백 함수 - callback function으로서 애니메이션 동작이 끝나면 다음 동작을 이어서 실행하고자 할 때 사용</p>
+
+  <h3>2. animate 메소드 사용하여 '원' 움직이게 하기</h3>
+  <div class="circle">원</div>
+  <input type="button" value="play" id="btn01">
+  <input type="button" value="stop" id="btn02">
+  <input type="button" value="원위치로" id="btn03">
+
+  <h3>3. 자바스크립트 절대값을 활용하여 캐릭터 위치 조정하기</h3>
+  <img src="./images/duck.gif" alt="바덕이" id="duck">
+  <p>
+    <input type="button" value="&#x2190;" id="l_btn">
+    <input type="button" value="&#x2192;" id="r_btn">
+    <input type="button" value="&#x2191;" id="t_btn">
+    <input type="button" value="&#x2193;" id="b_btn">
+  </p>
+
+  <h3>4. box에 마우스 오버시 애니메이션 연속 동작하게 하기</h3>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+  <div class="box">&nbsp;</div>
+
+  <h3>5. 제이쿼리 UI라이브러리를 사용하여 속도감 주기</h3>
+  <p>jquery.com 사이트의 왼쪽 상단의 ui탭을 클릭하고 왼쪽 easing 메뉴에서 jquery.ui 라이브러리를 찾아 연결하여 사용한다.</p>
+  <img src="./images/easing.png" alt="속도감 주기">
+  <div class="bar01"></div>
+  <input type="button" value="easeOutQuint" id="btn04">
+  <div class="bar02"></div>
+  <input type="button" value="easeOutElastic" id="btn05">
+  <div class="bar03"></div>
+  <input type="button" value="easeInBounce" id="btn06">
+
+  <h3>6. 실습 - 자신의 능력치 표현하기(html, css, javascript/jquery, UI/UX design)</h3>
+  
+  <h3 class="myskill">MY SKILL</h3>
+  <ul>
+    <li>
+      <span class="skill_name">HTML</span>
+      <div class="skill_bg">&nbsp;<div class="sk skill01">&nbsp;</div></div>
+      <span class="skill_gage">85%</span>
+    </li>
+    
+    <li>
+      <span class="skill_name">CSS</span>
+      <div class="skill_bg">&nbsp;<div class="sk skill02">&nbsp;</div></div>
+      <span class="skill_gage">85%</span>
+    </li>
+
+    <li>
+      <span class="skill_name">JAVASCRIPT</span>
+      <div class="skill_bg">&nbsp;<div class="sk skill03">&nbsp;</div></div>
+      <span class="skill_gage">50%</span>
+    </li>
+
+    <li>
+      <span class="skill_name">JQUERY</span>
+      <div class="skill_bg">&nbsp;<div class="sk skill04">&nbsp;</div></div>
+      <span class="skill_gage">60%</span>
+    </li>
+
+    <li>
+      <span class="skill_name">UI/UX DESIGN</span>
+      <div class="skill_bg">&nbsp;<div class="sk skill05">&nbsp;</div></div>
+      <span class="skill_gage">90%</span>
+    </li>
+  </ul>
+
+</body>
+</html>
