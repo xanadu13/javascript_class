@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CJ몰_FAQ 구현하기</title>
+  <style>
+  
+  /* 서식 초기화 */
+  *{margin: 0px; padding: 0px;}
+  ol, ul, li{list-style: none;}
+  a{text-decoration: none; color: #333;}
+  body{
+    font-family: '맑은 고딕', arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    letter-spacing: -1px;
+  }
+
+  /* 공통 서식 */
+  section{
+    width: 800px;
+    margin: 30px auto;
+    /* border: 2px solid #ccc; */
+  }
+  section h2{
+    margin-top: 30px;
+    font-size: 20px;
+  }
+
+  /* 검색 서식 */
+  fieldset{
+    border:none; width:100%;
+    position:relative;
+  }
+  fieldset legend{display: none;}
+  input[type=search]{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #640faf;
+    padding: 0px 50px;
+  }
+  input::placeholder{
+    font-weight: 500;
+  }
+  .fa-magnifying-glass{
+    color:#640faf;
+    font-size: 18px;
+    position: absolute; top:11px; left: 22px;
+  }
+
+  /* 질문 서식 */
+  .faq{
+    margin: 30px 0px;
+    counter-reset: faq;
+  }
+  .faq dt{
+    padding: 15px 0px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -1px;
+    cursor: pointer;
+  }
+  .faq dt::before{
+    counter-increment: faq;
+    content: counter(faq);
+    padding-right: 10px;
+    color: #640faf;
+    font-weight: bold;
+  }
+  .faq dd{
+    background: #f7f7f7;
+    padding: 25px 20px;
+    display: none;
+  }
+  i.fas{
+    font-size: 20px;
+    float:right;
+    margin-right: 20px;
+  }
+  .active01{
+    transform: rotate(180deg);
+  }
+
+
+  </style>
+
+    <!-- 폰트 어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- jQuery 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+
+      let q = $('.faq dt');
+
+      q.click(function(){
+
+        // 화살표 방향 변경
+        $(this).children().toggleClass('active01');
+        $(this).siblings().children().removeClass('active01');
+
+        // 질문 누르면 내용 출력
+        $(this).next().toggle().siblings('dd').hide();
+
+
+      });
+
+    });
+
+  </script>
+
+</head>
+<body>
+  <form name="search" action="search.php" method="post">
+
+    <section>
+  
+      <fieldset>
+        <legend>검색</legend>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" placeholder="검색어를 입력해 주세요.">
+      </fieldset>
+
+      <h2>자주 하는 질문 TOP10</h2>
+      <dl class="faq">
+        <dt>반품 신청은 어떻게 하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+
+        <dt>주문을 취소하고 싶어요.
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+
+        <dt>리뷰는 어떻게 작성하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+
+        <dt>반품 시 별도 택배비가 부과되나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>원하는상품 방송시간을 문자로 받고 싶어요
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>회원 탈퇴는 어떻게 하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>배송지를 변경 할 수 있나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>교환 신청은 어떻게 하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>CJ온스타일 앱(어플리케이션)은 어떻게 설치하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+        <dt>결제수단 변경하려면 주문취소하고 재주문하나요?
+          <i class="fas fa-angle-down"></i></dt>
+        <dd>
+          상품을 취소하지 않고도 다른 결제수단으로 결제 변경이 가능합니다.<br>
+          - [CJ온스타일 로그인] > [마이존] > [주문/배송 조회] > [결제변경] <br>
+          : 당일 주문 건에 한하여 23시30분까지 신용카드로 결제변경이 가능합니다. <br>
+          <br>
+          - 신용카드 외 다른 결제수단으로 변경을 원하는 경우<br>
+          : 당사 고객센터(1644-2525)로 연락주시면 결제변경 도와드리겠습니다.
+        </dd>
+        
+      </dl>
+
+    </section>
+
+  </form>
+</body>
+</html>

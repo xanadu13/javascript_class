@@ -5,10 +5,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>제이쿼리 문서객체모델(dom) - 탐색메서드를 활용한 스타벅스 자주하는 질문</title>
-  <!-- 서식 작성 -->
+  <!-- CSS 서식 -->
   <link rel="stylesheet" href="./css/faq.css" type="text/css">
   <!-- 폰트 어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- 웹폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <!-- jQuery 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(function(){
+
+      let q = $('.faq > dt')
+
+      // 1. 첫번째 질문에 서식을 적용하고
+      q.first().addClass('act01');
+
+      // 답변이 보이도록 한다.
+      q.first().next().show();
+
+      // 첫번째 질문에 있는 화살표 방향 반대로 돌린다.
+      q.first().find('i.fas').addClass('act02');
+
+      // 사용자가 선택한 질문에 해당하는 서식을 적용
+      q.click(function(){
+
+        // // VER 1 : 질문과 답변 토글
+        // $(this).toggleClass('act01');
+        // // 제목에 서식 적용
+        // $(this).find('i.fas').toggleClass('act02');
+        // // 화살표 방향 토글
+        // $(this).next().slideToggle();
+        // // 답변 토글
+        
+
+        //VER 2 : 내가 선택한 질문만 펼치고 나머지는 접히게 구현
+        $(this).addClass('act01').siblings(q).removeClass('act01');
+        $(this).find('i.fas').addClass('act02').parent().siblings().find('i.fas').removeClass('act02');
+        $(this).next().slideDown().siblings('dd').slideUp();
+
+
+      });
+
+
+
+    });
+  </script>
 </head>
 <body>
   <form name="search" action="search.php" method="post">
@@ -27,8 +69,8 @@
       <dt>[온라인 스토어] 보낸 선물함이 사라졌는데, 과거에 선물한 이력은 어떻게 확인할 수 있나요?
         <i class="fas fa-angle-down"></i></dt>
       <dd>
-        Gift배송하기 서비스에서 ‘배송지 입력’을 기준으로 주문내역이 노출되었던 것과는 달리, 온라인 스토어 서비스에서는 ‘결제’를 기준으로 주문내역이 노출됩니다. 따라서, 과거에 보내신 선물의 경우 스타벅스 앱 [Shop > 쇼핑하러 가기 > 마이페이지 > 주문내역]에서 확인하실 수 있습니다.
-        <p>아울러, 스타벅스 온라인 스토어의 [선물함]에는 다른 사람으로부터 선물 받은 내역만 노출됩니다.</p>
+        Gift배송하기 서비스에서 ‘배송지 입력’을 기준으로 주문내역이 노출되었던 것과는 달리, 온라인 스토어 서비스에서는 ‘결제’를 기준으로 주문내역이 노출됩니다. 따라서, 과거에 보내신 선물의 경우 스타벅스 앱 [Shop > 쇼핑하러 가기 > 마이페이지 > 주문내역]에서 확인하실 수 있습니다.<br>
+        아울러, 스타벅스 온라인 스토어의 [선물함]에는 다른 사람으로부터 선물 받은 내역만 노출됩니다.
         <br>
         <p>- 주문내역: 결제한 주문 내역 (구매하기/선물하기)</p>
         <p>- 선물함: 선물 받은 내역 (선물받기)</p>
