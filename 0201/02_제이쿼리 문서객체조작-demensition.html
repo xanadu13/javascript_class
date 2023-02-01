@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02_제이쿼리 문서객체조작-demensitions(크기, 수치조작)</title>
+  <style>
+    #box01{
+      width: 640px; height: 640px;
+      padding: 20px 30px;
+      border: 5px solid #f00;
+    }
+    .result{
+      background: #ff0;
+      color: #00f;
+    }
+  </style>
+
+  <!-- 제이쿼리 라이브러리  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <script>
+
+    $(function(){
+
+      $('#btn01').click(function(){
+        $('.result').html($('#box01').width()); //640
+      }); 
+
+      $('#btn02').click(function(){
+        $('.result').html($('#box01').height()); //644 = 640
+      }); 
+
+      $('#btn03').click(function(){
+        $('.result').html($('#box01').innerWidth()); //700
+      }); 
+
+      $('#btn04').click(function(){
+        $('.result').html($('#box01').innerHeight()); //680
+      }); 
+
+      $('#btn05').click(function(){
+        $('.result').html($('#box01 img').width()); //640
+      }); 
+
+      $('#btn06').click(function(){
+
+        let txt01="";
+
+        txt01 += "현재 document의 너비는 [" + $(document).width() + "]px 이고 높이는 [" + $(document).height() + "]px 입니다.<br> 현재 window의 너비는 [" + $(window).width() + "]px 이고 높이는 [" + $(window).height() + "]px 입니다.";
+
+        $('.result').html(txt01);
+
+      });
+
+
+    });
+
+  </script>
+</head>
+<body>
+  <h2>02_제이쿼리 문서객체조작-demensitions(크기, 수치조작)</h2>
+  <p>제이쿼리에서는 사용자가 선택한 요소의 크기밧을 구하거나 크기밧을 설정할 수가 있습니다.</p>
+  <ul>
+    <li>width(); - 선택한 요소의 가로크기를 구하거나 설정하기</li>
+    <li>hieght(); - 선택한 요소의 세로크기를 구하거나 설정하기</li>
+    <li>innerWidth(); - 선택한 요소의 가로크기(패딩포함)를 구하거나 설정하기</li>
+    <li>innerHeiht(); - 선택한 요소의 세로크기(패딩포함)를 구하거나 설정하기</li>
+  </ul>
+  
+  <input type="button" value="box01 가로크기 구하기" id="btn01">
+  <input type="button" value="box01 세로크기 구하기" id="btn02">
+  <input type="button" value="box01 패딩+가로크기 구하기" id="btn03">
+  <input type="button" value="box01 패딩+세로크기 구하기" id="btn04">
+  <input type="button" value="box01 이미지 크기 구하기" id="btn05">
+  <input type="button" value="document, window 가로/세로크기 구하기" id="btn06">
+  <br><br>
+
+  <div id="box01">
+    <img src="./images/main03.jpg" alt="이미지">
+  </div>
+
+  <p class="result">위 버튼을 클릭하면 이곳에 가로, 세로 크기값이 출력됩니다.</p>
+
+  <p>document의 너비와 window의 너비는 문서안의 콘텐츠 가로너비에 따라 다를 수 있다. <br>
+    윈도우는 브라우저창의 너비를 의미하지만, document는 문서내의 내용의 가로크기에 해당하기 때문에 다르게 나올 수 있다. 예) #box01{width:1000px;}</p>
+
+  <script>
+
+    // 1. 윈도우의 너비가 pc, tablet, mobile 해상도 일 때, 각각 배경색 변경하기
+    // 2. 윈도우 창의 너비가 조절될때도 해상도에 따라 배경색이 변경 되어야한다.
+    
+    $(function(){
+
+      $(window).resize(function(){
+
+        let win_w = $(window).width();
+
+        if(win_w > 1024){
+          $('body').css({'background':'#eff'});
+        }else if(win_w > 768){
+          $('body').css({'background':'#fef'});
+        }else{
+          $('body').css({'background':'#feb'});
+        };
+
+      }).resize();
+
+
+    });
+
+    
+  </script>
+
+<!-- 선생님 버전 -->
+<!-- <script>
+  //1.윈도우의 너비가 pc, tablet, mobile 해상도 일 때 각각 배경색 변경하기
+  function response(){
+    let wW = $(window).width();
+    if(wW>=1024){  //pc영역일때 실행
+      $('body').css('background-color','#ffff00');
+    }else if(wW>=768){  //윈도우창의 너비가 768 ~ 1023일때 배경색 변경
+      $('body').css('background-color','#00ff00');  //태블릿영역일때 실행
+    }else{                     //윈도우창의 너비가 767이하일때 배경색 변경
+      $('body').css('background-color','#0000ff'); //모바일영역일때 실행
+    }
+  }
+  response();    
+  //2. 윈도우 창의 너비가 조절될때도 해상도에 따라 배경색이 변경되야 됨.
+  $(window).resize(function(){
+    response();
+  });
+</script> -->
+
+
+</body>
+</html>

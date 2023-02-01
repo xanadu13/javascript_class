@@ -4,6 +4,7 @@
   --bc-color01:#ff6b81;
   --t-color01: #333;
   --t-color02: #fff;
+  --t-color03: rgb(255, 187, 187);
 }
 
 /* 서식 초기화 */
@@ -39,21 +40,31 @@ header > h1 > a{color:var(--t-color02);}
   display: flex;
   justify-content: space-around;
 }
-.gnb > ul > li{}
 .gnb > ul > li > a{
   color: var(--t-color02);
   line-height: 60px;
   font-size: 20px;
   text-transform: capitalize;
+  font-weight: 400;
+  transition: 0.5s;
+}
+.gnb > ul > li > a:hover{
+  color: var(--t-color03);
+  font-weight: bold;
+}
+.t_act{
+  color: var(--t-color03) !important;
+  font-weight: bold !important; 
 }
 
 /* 콘텐츠 서식 */
 main{
   width: 1200px;
   margin: 0px auto;
+  margin-top: 50px;
 }
 main > section{
-  height: 850px;
+  height: 900px;
 }
 main > section:nth-child(2n){background:#fffdf5;}
 main > section:nth-child(2n-1){background:#fff3f5;;}

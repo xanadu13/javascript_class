@@ -22,6 +22,58 @@
         $('html, body').animate({scrollTop:$('section').eq(n).offset().top-50}, 500);
         return false;
       });
+      
+
+      $(window).scroll(function(){
+        
+        console.log($(this).scrollTop());
+        // 화면 스크롤 값 출력해보기
+
+        let sPos = $(this).scrollTop();
+        
+        // if문을 활용해 조건 범위에 맞는 a요소에 서식 적용하기
+        // if(sPos >= 0 && sPos <= 888){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:first-child a').addClass('t_act');
+        // }else if(sPos >= 900 && sPos <= 1798){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:nth-child(2) a').addClass('t_act');
+        // }else if(sPos >= 1800 && sPos <= 2698){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:nth-child(3) a').addClass('t_act');
+        // }else if(sPos >= 2700 && sPos <= 3598){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:nth-child(4) a').addClass('t_act');
+        // }else if(sPos >= 3600 && sPos <= 4498){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:nth-child(5) a').addClass('t_act');
+        // }else if(sPos >= 4500 && sPos <= 5398){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:nth-child(6) a').addClass('t_act');
+        // }else if(sPos >= 5400 && sPos <= 6300){
+        //   $('.gnb ul li a').removeClass('t_act');
+        //   $('.gnb ul li:last-child a').addClass('t_act');
+        // }else{
+        //   // 조건에 해당되지 않으면 서식을 제거
+        //   $('.gnb ul li a').removeClass('t_act');
+        // };
+
+        
+        // offset 메서드로 각각 해당하는 박스의 위치값에 따른 서식 적용하기
+        $('main section').each(function(i){
+          let top = $(this).offset().top-50;
+          if(sPos >= top){
+            $('.gnb li a').removeClass('t_act');
+            $('.gnb li').eq(i).find('a').addClass('t_act');
+          }
+        });
+      
+        
+      });
+
+
+
+
 
 
     });
@@ -35,7 +87,7 @@
 
     <nav class="gnb">
       <ul>
-        <li><a href="#" title="home">home</a></li>
+        <li><a href="#" title="home" class="t_act">home</a></li>
         <li><a href="#" title="features">features</a></li>
         <li><a href="#" title="overview">overview</a></li>
         <li><a href="#" title="pricing">pricing</a></li>
