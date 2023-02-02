@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* 서식 초기화 */
+li, ul, ol {list-style: none;}
+a{color: #333; text-decoration: none;}
+body{
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  color: #333;
+  background: #eee;
+}
+
+/* 탭메뉴 서식 */
+.tab{
+  width: 1040px;
+  height: 740px;
+  /* border: 3px solid #333; */
+  margin: 0px auto;
+  position: relative;
+}
+.tab ul{
+  display:flex;
+  margin:0px; padding: 0px;
+}
+.tab ul li{
+  width: 20%;
+  height: 100px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  margin-left: -1px;
+}
+.tab ul li a{}
+.tab ul li a > img{
+  display: block;
+  margin: 10px auto;
+  height: 45px;
+}
+.tab ul li a > span{
+  display:block;
+  text-align: center;
+}
+
+/* 콘텐츠 서식 */
+.con{
+  width: 1040px;
+  height: 640px;
+  position: absolute;
+  left: 0px; bottom: 0px;
+}
+
+div:not(.c1){display: none;}
+
+.on1{
+  background: #F06D01 !important;
+}
+.on2{
+  color: #fff !important;
+}

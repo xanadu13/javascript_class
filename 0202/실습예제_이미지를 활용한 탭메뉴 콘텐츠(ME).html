@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제_제이쿼리 탭메뉴 콘텐츠</title>
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+
+    <!-- 노토산스 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 제이쿼리 라이브러리  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+
+      $(function(){
+
+        // 탭메뉴(li) 변수 선언
+        let tab = $('.tab ul li')
+
+        // 탭메뉴 클릭시 다음 내용 실행
+        tab.click(function(){
+
+          // 선택한 li의 배열값 변수에 저장
+          let n = $(this).index();
+
+          // li 각각에 다음 내용 실행
+          $('.tab ul li').each(function(i){
+
+            $(this).find('a').find('img').attr('src', $(this).find('img').attr('src').replace('_off', '_on'));
+
+            // 선택한 배열값이 아니라면 다음 내용 실행
+            if(n!=i){
+              $(this).find('a').find('img').attr('src', $(this).find('img').attr('src').replace('_on', '_off'));
+            };
+
+
+          });
+
+          // 글자색 변경
+          $(this).find('span').addClass('on2').parent().parent().siblings().find('span').removeClass('on2');
+
+          // 탭메뉴 배경색 변경
+          $(this).addClass('on1').siblings().removeClass('on1');
+
+          // 컨텐츠 내용(이미지) 변경
+          $(this).find('div').show().parent().siblings().find('div').hide();
+
+
+        });
+
+
+      });
+
+    </script>
+
+</head>
+<body>
+  
+  <article class="tab">
+    <ul>
+      <li class="on1">
+        <a href="#" title="">
+          <img src="./img/ico_theme_zone_1_on.png" alt="테마여행">
+          <span class="on2">테마여행</span>
+        </a>
+        <div class="con c1">
+          <img src="./img/01.jpg" alt="콘텐츠1">
+        </div>
+      </li>
+
+      <li>
+        <a href="#" title="">
+          <img src="./img/ico_theme_zone_2_off.png" alt="추천일정">
+          <span>추천일정</span>
+        </a>
+        <div class="con c2">
+          <img src="./img/02.jpg" alt="콘텐츠2">
+        </div>
+      </li>
+
+      <li>
+        <a href="#" title="">
+          <img src="./img/ico_theme_zone_3_off.png" alt="스크린속 제주">
+          <span>스크린속 제주</span>
+        </a>
+        <div class="con c3">
+          <img src="./img/03.jpg" alt="콘텐츠3">
+        </div>
+      </li>
+
+      <li>
+        <a href="#" title="">
+          <img src="./img/ico_theme_zone_4_off.png" alt="교통정보">
+          <span>교통정보</span>
+        </a>
+        <div class="con c4">
+          <img src="./img/04.jpg" alt="콘텐츠4">
+        </div>
+      </li>
+
+      <li>
+        <a href="#" title="">
+          <img src="./img/ico_theme_zone_5_off.png" alt="안전&middot;안심광고 가이드">
+          <span>안전&middot;안심광고 가이드</span>
+        </a>
+        <div class="con c5">
+          <img src="./img/05.jpg" alt="콘텐츠5">
+        </div>
+      </li>
+    </ul>
+  </article>
+
+</body>
+</html>

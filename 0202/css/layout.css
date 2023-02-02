@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+#m_nav{
+  width: 200px;
+  position: fixed;
+  right: 20px; bottom: 50%;
+  transform: translateY(+50%);
+}
+#m_nav ul{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#m_nav ul li{
+  width: 200px;
+  height: 40px;
+  position: relative;
+}
+#m_nav ul li a{
+  background: rgb(0, 0, 0, .3);
+  color: #fff;
+  width: 40px; height: 40px;
+  border-radius: 40px;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  right: 0px; top: 0px;
+  transition: 0.5s;
+}
+#m_nav span{
+  background: rgb(31, 178, 214);
+  color: #fff;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  right: 0px; top:0px;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+#m_nav li:hover span{
+  right: 165px;
+}
+
+#m_nav ul li:hover a{
+  width: 200px;
+}
