@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBWAY 써브웨이</title>
+
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <!-- 기본서식, 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+  <!-- 레이아웃서식 -->
+  <link href="./css/common.css" rel="stylesheet" type="text/css">
+  <!-- 콘텐츠 영역서식 -->
+  <link href="./css/main.css" rel="stylesheet" type="text/css">
+  <!-- 아이콘폰트 주소 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- css3추가속성시 접두사 자동으로 붙여주는 스크립트 -->
+  <script src="./script/prefixfree.min.js"></script>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- 제이쿼리 쿠키파일 -->
+  <script src="./script/jquery.cookie.js" defer></script>
+  <!-- 스와이퍼 슬라이드 -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="./script/swiper.js" defer></script>
+  <link href="./css/swiper.css" rel="stylesheet" type="text/css"> -->
+
+  <!-- 공통스크립트 -->
+  <script src="./script/layout.js" defer></script>
+  <!-- 콘텐츠 스크립트 -->
+  <script src="./script/main.js" defer></script>
+</head>
+<body>
+
+  <!-- 헤더 영역 -->
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/subway_logo.png" alt="서브웨이 로고">
+      </a>
+    </h1>
+
+    <nav class="gnb">
+      <ul>
+        <li>
+          <a href="#" title="메뉴소개">메뉴소개<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="샌드위치">샌드위치</a></li>
+            <li><a href="#" title="랩 &middot; 기타">랩 &middot; 기타</a></li>
+            <li><a href="#" title="샐러드">샐러드</a></li>
+            <li><a href="#" title="아침메뉴">아침메뉴</a></li>
+            <li><a href="#" title="스마일 썹">스마일 썹</a></li>
+            <li><a href="#" title="단체메뉴">단체메뉴</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" title="이용방법">이용방법<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="써브웨이 이용방법">써브웨이 이용방법</a></li>
+            <li><a href="#" title="단체메뉴 이용방법">단체메뉴 이용방법</a></li>
+            <li><a href="#" title="신선한 재료 소개">신선한 재료 소개</a></li>
+            <li><a href="#" title="App 이용방법">App 이용방법</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" title="새소식">새소식<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="이벤트 &middot; 프로모션">이벤트 &middot; 프로모션</a></li>
+            <li><a href="#" title="뉴스 &middot; 공지사항">뉴스 &middot; 공지사항</a></li>
+            <li><a href="#" title="광고영상">광고영상</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" title="써브웨이">써브웨이<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="써브웨이의 역사">써브웨이의 역사</a></li>
+            <li><a href="#" title="써브웨이의 약속">써브웨이의 약속</a></li>
+            <li><a href="#" title="샌드위치 아티스트 지원">샌드위치 아티스트 지원</a></li>
+            <li><a href="#" title="매장찾기">매장찾기</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" title="가맹점">가맹점<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="써브웨이 프랜차이즈">써브웨이 프랜차이즈</a></li>
+            <li><a href="#" title="가맹관련 FAQ">가맹관련 FAQ</a></li>
+            <li><a href="#" title="가맹신청 &middot; 문의">가맹신청 &middot; 문의</a></li>
+            <li><a href="#" title="지사안내">지사안내</a></li>
+            <li><a href="#" title="사업설명회">사업설명회</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="#" title="온라인주문">온라인주문<i class="fas fa-angle-down"></i></a>
+          <ul class="sub">
+            <li><a href="#" title="FAST-SUB">FAST-SUB</a></li>
+            <li><a href="#" title="HOME-SUB">HOME-SUB</a></li>
+            <li><a href="#" title="단체주문">단체주문</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- 메인콘텐츠 영역 -->
+
+  <main>
+
+    <!-- 써브웨이 메인슬라이드 -->
+    <section id="main_slide">
+
+      <h2>MAIN SLIDE</h2>
+
+      <!-- 이미지영역 -->
+      <div>
+        <span>에그마요<br>고민하지마요</span>
+        <img src="./images/pc_slide_1.jpg" alt="메인슬라이드 이미지1">
+      </div>
+      <div>
+        <span>말이안나올땐<br>손으로주문하자</span>
+        <img src="./images/pc_slide_2.jpg" alt="메인슬라이드 이미지2">
+      </div>
+      <div>
+        <span>고구마칩<br>신규메뉴출시</span>
+        <img src="./images/pc_slide_3.jpg" alt="메인슬라이드 이미지3">
+      </div>
+
+      <!-- SNS 아이콘 -->
+      <ul class="sns">
+        <li><a href="#" title="facebook"><i class="fa-brands fa-facebook"></i></a></li>
+        <li><a href="#" title="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#" title="youtube"><i class="fa-brands fa-youtube"></i></a></li>
+      </ul>
+
+      <!-- 좌/우 버튼 -->
+      <ul class="s_btn">
+        <li><a href="#" title="이전버튼"><img src="./images/prev_btn.png" alt="이전버튼"></a></li>
+        <li><a href="#" title="다음버튼"><img src="./images/next_btn.png" alt="다음버튼"></a></li>
+      </ul>
+
+      <!-- 컨트롤 버튼 -->
+      <ul class="ctrl_btn">
+        <li class="ctrl_on">&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+      </ul>
+
+    </section>
+
+
+    <!-- 써브웨이 뉴스 -->
+    <section>
+      <h2>SUBWAY’S NEWS</h2>
+    </section>
+
+
+    <!-- 써브웨이 이용방법 -->
+    <section>
+      <h2>HOW TO ORDER SUBWAY</h2>
+    </section>
+
+
+    <!-- 써브웨이 메뉴 -->
+    <section>
+      <h2>SUBWAY’S MENU</h2>
+    </section>
+
+
+    <!-- 써브웨이 이벤트 -->
+    <section>
+      <h2>SUBWAY’S EVENT</h2>
+    </section>
+
+
+    <!-- 써브웨이 갤러리 -->
+    <section>
+      <h2>SUBWAY’S STORY</h2>
+    </section>
+
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer>
+
+  </footer>
+
+</body>
+</html>

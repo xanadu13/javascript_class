@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.swiper {
+  width: 80%;
+  height: 650px;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}

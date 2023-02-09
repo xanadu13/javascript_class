@@ -1,11 +1,59 @@
 @charset "utf-8";
 
+#m_nav{
+  position: fixed;
+  right: 30px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  width: 200px; height: 160px;
+}
+#m_nav > ul{
+  position: relative;
+}
+#m_nav > ul > li{
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  line-height: 30px;
+  transition: 0.5s;
+  background: rgba(0,0,0, .3  );
+  position: absolute; right: 0px;
+  overflow: hidden;
+}
 
+#m_nav > ul > li:nth-child(2){top: 40px;}
+#m_nav > ul > li:nth-child(3){top: 80px;}
+#m_nav > ul > li:nth-child(4){top: 120px;}
+#m_nav > ul > li:last-child{top: 160px;}
+
+#m_nav > ul > li > span{
+  display: inline-block;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: rgb(83, 204, 226);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+#m_nav > ul > li:hover > span{
+  background: rgb(13, 171, 192); 
+}
+#m_nav > ul > li > a{
+  color: #fff; display: inline-block;
+  width: 160px;
+  text-align: center;
+}
+#m_nav > ul > li:hover{
+  width: 200px;
+}
+
+
+/* 내가한거
 #m_nav{
   width: 200px;
   position: fixed;
-  right: 20px; bottom: 50%;
-  transform: translateY(+50%);
+  right: 20px; top: 50%;
+  transform: translateY(-50%);
 }
 #m_nav ul{
   display:flex;
@@ -32,6 +80,7 @@
 #m_nav span{
   background: rgb(31, 178, 214);
   color: #fff;
+  font-weight: bold;
   width: 40px; height: 40px;
   border-radius: 50%;
   line-height: 40px;
@@ -49,4 +98,4 @@
 
 #m_nav ul li:hover a{
   width: 200px;
-}
+} */

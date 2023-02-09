@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+/* 조회하기 테이블 */
+
+main{
+  width:100%;
+  margin: 100px 0px;
+}
+
+caption{
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--bg-color02);
+}
+
+table {
+border: 1px #333 solid;
+font-size: 14px;
+width: 1200px;
+border-collapse: collapse;
+overflow: hidden;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,.25);
+margin: 0px auto;
+}
+
+th {
+padding: 0px 10px;
+text-align: left;
+background: #212772;
+color: #fff;
+text-transform: uppercase;
+overflow: hidden;
+}
+
+td, th {
+padding: 16px 10px;
+vertical-align: middle;
+}
+
+td {
+border-bottom: 1px solid rgba(0,0,0,.1);
+background: #fff;
+}
+
+.complate{
+  display: block;
+  font-size: 20px;
+  color:#434cc9;
+  font-weight: bold;
+  text-align: center;
+  margin: 100px auto;
+  margin-top: 200px;
+}
+
+/* 시승신청 다시예약 */
+.drive_re{
+  font-size: 14px;
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  width: 500px;
+  height: 40px; 
+  border: none;
+  background: var(--bg-color02);
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0px auto;
+}
+.drive_re:hover{
+border: 1px solid var(--bg-color02);
+color: var(--bg-color02);
+background: #fff;
+}
+
+/* 시승신청 서식 */
+
+fieldset{
+  font-size: 14px;
+  width: 500px;
+  margin: 50px auto 100px auto;
+  border: none;
+  position: relative;
+}
+legend{
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--bg-color02);
+}
+label{
+  display: block;
+  margin: 10px 0px;
+  font-weight: 500;
+}
+.sms{
+  margin: 10px 0px; 
+  font-weight: 500;
+}
+body > main > form > fieldset > label:nth-child(9){
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: 400;
+  text-indent: 10px;
+}
+body > main > form > fieldset > label:nth-child(11){
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+input[type=radio]{
+  margin-right: 30px;
+}
+fieldset input[type=text]{
+  width: 500px;
+  height: 40px; 
+  border: none;
+  background: #eee;
+  margin: 5px 0px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+fieldset input[type=email]{
+  width: 500px;
+  height: 40px; 
+  border: none;
+  background: #eee;
+  margin: 5px 0px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+textarea{
+  width: 500px;
+  border: none;
+  background: #eee;
+  padding: 0px 20px;
+  box-sizing: border-box;
+}
+input[type=submit]{
+  width: 500px;
+  height: 40px; 
+  border: none;
+  background: var(--bg-color02);
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+input[type=reset]{
+  width: 500px;
+  height: 40px; 
+  border: none;
+  background: var(--bg-color02);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+input[type=submit]:hover{
+  border: 1px solid var(--bg-color02);
+  color: var(--bg-color02);
+  background: #fff;
+}
+input[type=reset]:hover{
+  border: 1px solid var(--bg-color02);
+  color: var(--bg-color02);
+  background: #fff;
+}
+select{
+  width: 500px;
+  height: 30px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+input[type=date]{
+  width: 500px;
+  height: 30px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}

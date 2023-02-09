@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현대자동차 캐스퍼 - 시승신청 예약하기</title>
+  <!-- 초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css">
+  <!-- 기본서식, 공통서식 -->
+  <link href="./css/base.css" rel="stylesheet" type="text/css">
+  <!-- 공통 레이아웃 서식 -->
+  <link href="./css/common.css" rel="stylesheet" type="text/css">
+  <!-- 콘텐츠 영역서식 -->
+  <link href="./css/drive.css" rel="stylesheet" type="text/css">
+  <!-- 아이콘폰트 주소 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- css3추가속성시 접두사 자동으로 붙여주는 스크립트 -->
+  <script src="./script/prefixfree.min.js"></script>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <!-- 제이쿼리 ui라이브러리 -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- 제이쿼리 쿠키파일 -->
+  <script src="./script/jquery.cookie.js" defer></script>
+  <!-- 스와이퍼 슬라이드 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="./script/swiper.js" defer></script>
+
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo-casper_black.png" alt="상단로고">
+      </a>
+    </h1>
+
+    <!-- 상단 스크롤시 고정 내비게이션 -->
+    <nav>
+      <ul class="gnb">
+        <li><a href="#" title="소개">소개</a></li>
+        <li><a href="#" title="체험">체험</a></li>
+        <li><a href="#" title="이벤트">이벤트</a></li>
+        <li><a href="#" title="구매안내">구매안내</a></li>
+        <li><a href="#" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+
+    <i class="fas fa-user"></i>
+    <i class="fas fa-bell"></i>
+    <!-- 알림아이콘 -->
+  </header>
+
+  <!-- 메인콘텐츠 영역 -->
+  <main>
+
+    <form name="drive" method="POST" action="db_drive_insert.php">
+
+      <fieldset>
+
+        <legend>시승신청 온라인 예약</legend>
+        <label for="name">고객명</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="phone">휴대폰</label>
+        <input type="text" name="phone" id="phone" required>
+
+        <label for="email">이메일 주소</label>
+        <input type="email" name="email" id="email" required>
+
+        <p class="sms">문자메시지 수신 여부</p>
+        <label for="s01">수신 동의</label><input type="radio" name="sms" id="s01" value="수신 동의">
+        <label for="s02">수신 거부</label><input type="radio" name="sms" id="s02" value="수신 거부">
+
+        <label for="place">시승 장소 선택</label>
+        <select name="place" id="place" required>
+          <option value="선택">선택</option>
+          <option value="드라이빙 라운지 강남">드라이빙 라운지 강남</option>
+          <option value="드라이빙 라운지 용산">드라이빙 라운지 용산</option>
+          <option value="드라이빙 라운지 성수">드라이빙 라운지 성수</option>
+          <option value="드라이빙 라운지 분당">드라이빙 라운지 분당</option>
+          <option value="드라이빙 라운지 일산">드라이빙 라운지 일산</option>
+          <option value="드라이빙 라운지 동탄">드라이빙 라운지 동탄</option>
+        </select>
+
+        <label for="car">시승 차량 선택</label>
+        <select name="car" id="car" required>
+          <option value="선택">선택</option>
+          <option value="캐스퍼 가솔린 1.0 인스퍼레이션">캐스퍼 가솔린 1.0 인스퍼레이션</option>
+          <option value="캐스퍼 가솔린 1.0 터보 인스퍼레이션">캐스퍼 가솔린 1.0 터보 인스퍼레이션</option>
+          <option value="캐스퍼 가솔린 1.0 터보 디에센셜">캐스퍼 가솔린 1.0 터보 디에센셜</option>
+        </select>
+
+        <label for="have">보유 차종</label>
+        <input type="text" name="have" id="have" required>
+
+        <label for="date">시승 희망일</label>
+        <input type="date" name="date" id="date" required>
+
+        <input type="submit" value="예약하기">
+        <input type="reset" value="작성취소">
+
+      </fieldset>
+
+    </form>
+
+
+  </main>
+
+
+  <footer>
+
+    <div class="h_logo">
+      <img src="./images/logo-hyundai.a9ebdc6.png" alt="현대자동차 로고">
+    </div>
+    
+    <div class="f_con">
+      <ul>
+        <li><a href="#none" title="이용약관">이용약관</a></li>
+        <li><a href="#none" title="개인정보 처리방침">개인정보 처리방침</a></li>
+        <li><a href="#none" title="저작권 안내">저작권 안내</a></li>
+        <li><a href="#none" title="공동인증서 안내">공동인증서 안내</a></li>
+        <li><a href="#none" title="현대자동차 홈페이지">현대자동차 홈페이지</a></li>
+      </ul>
+
+      <dl>
+        <dt>사업자등록번호 :</dt>
+        <dd>101-81-09147</dd>
+        
+        <dt>통신판매업신고번호 :</dt>
+        <dd>2002-01546</dd>
+        
+        <dt>대표이사 :</dt>
+        <dd>장재훈
+          <a href="#" title="사업자정보확인">사업자정보확인 ></a>
+        </dd>
+
+        <dt>캐스퍼 고객센터 :</dt>
+        <dd>080-500-6000</dd><br>
+
+        <dt>주소 :</dt>
+        <dd>서울시 서초구 현릉로 12</dd>
+
+        <dt>호스팅서비스 제공 :</dt>
+        <dd>현대오토에버(주)</dd>
+      </dl>
+
+      <address>COPYRIGHT &copy; HYUNDAI MOTOR COMPANY ALL LIGHTS RESERVED.</address>
+    </div>
+
+  </footer>
+</body>
+</html>
